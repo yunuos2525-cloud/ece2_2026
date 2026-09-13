@@ -1,0 +1,3 @@
+VCD info: dumpfile wave.vcd opened for output.
+LAB1_PASS demux_1x8 cases=16
+C:\Users\yunji\ece2\ece2_2026\LAB1\07_demux\sim\tb_demux_1x8.sv:37: $finish called at 160000 (1ps)
