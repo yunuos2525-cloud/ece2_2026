@@ -1,0 +1,3 @@
+VCD info: dumpfile wave.vcd opened for output.
+LAB1_PASS full_adder cases=8
+C:\Users\yunji\ece2\ece2_2026\LAB1\02_full_adder\sim\tb_full_adder.sv:33: $finish called at 80000 (1ps)
