@@ -1,0 +1,3 @@
+VCD info: dumpfile wave.vcd opened for output.
+FATAL: C:\Users\yunji\ece2\ece2_2026\LAB1\09_decoder\sim\tb_decoder3x8.sv:24: FAIL decoder3x8 vector=1 expected=02 actual=00
+       Time: 20  Scope: tb_decoder3x8
