@@ -1,0 +1,3 @@
+VCD info: dumpfile wave.vcd opened for output.
+LAB1_PASS adder_4bit cases=256
+C:\Users\yunji\ece2\ece2_2026\LAB1\03_4bit_adder\sim\tb_adder_4bit.sv:34: $finish called at 2560000 (1ps)
