@@ -1,0 +1,3 @@
+VCD info: dumpfile wave.vcd opened for output.
+LAB1_PASS decoder3x8 cases=8
+C:\Users\yunji\ece2\ece2_2026\LAB1\09_decoder\sim\tb_decoder3x8.sv:35: $finish called at 80 (1ns)
