@@ -1,0 +1,46 @@
+$date
+	Mon Sep 14 05:34:10 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module tb_encoder8x3 $end
+$var wire 3 ! a [2:0] $end
+$var reg 3 " expected [2:0] $end
+$var reg 8 # i [7:0] $end
+$var integer 32 $ checked [31:0] $end
+$var integer 32 % k [31:0] $end
+$var integer 32 & n [31:0] $end
+$scope module dut $end
+$var wire 8 ' i [7:0] $end
+$var reg 3 ( a [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 (
+b0 '
+b0 &
+b1000 %
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#10
+b110 !
+b110 (
+b111 "
+b1000 %
+b1 #
+b1 '
+b1 &
+b1 $
+#20
