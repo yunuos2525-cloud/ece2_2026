@@ -1,0 +1,3 @@
+VCD info: dumpfile wave.vcd opened for output.
+LAB1_PASS mux_4x1 cases=64
+C:\Users\yunji\ece2\ece2_2026\LAB1\06_mux\sim\tb_mux_4x1.sv:37: $finish called at 640000 (1ps)
