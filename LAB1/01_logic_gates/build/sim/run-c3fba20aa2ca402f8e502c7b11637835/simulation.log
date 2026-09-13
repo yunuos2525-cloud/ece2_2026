@@ -1,0 +1,3 @@
+VCD info: dumpfile wave.vcd opened for output.
+FATAL: C:\Users\yunji\ece2\lab1_01_logic_gates\sim\tb_logic_gate_modern.sv:14: FAIL logic_gate vector=3 expected=6 actual=7
+       Time: 40000  Scope: tb_logic_gate_modern
