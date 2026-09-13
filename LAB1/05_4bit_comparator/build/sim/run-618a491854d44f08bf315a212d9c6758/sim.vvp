@@ -1,0 +1,128 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2009.vpi";
+S_000001c960326020 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_000001c960327030 .scope module, "tb_compare_4" "tb_compare_4" 3 3;
+ .timescale -9 -12;
+v000001c9602e6940_0 .var "a", 3 0;
+v000001c9602e69e0_0 .var "b", 3 0;
+v000001c9602e6a80_0 .var/i "checked", 31 0;
+v000001c9602e6b20_0 .var "expected", 2 0;
+v000001c960334050_0 .var/i "n", 31 0;
+v000001c9603340f0_0 .net "o", 2 0, L_000001c960334370;  1 drivers
+S_000001c9603271c0 .scope module, "dut" "compare_4" 3 8, 4 1 0, S_000001c960327030;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /INPUT 4 "b";
+    .port_info 2 /OUTPUT 3 "o";
+v000001c9602e6f50_0 .net *"_ivl_0", 0 0, L_000001c960334190;  1 drivers
+v000001c960325d50_0 .net *"_ivl_2", 0 0, L_000001c960334230;  1 drivers
+v000001c9602eadd0_0 .net *"_ivl_4", 0 0, L_000001c9603342d0;  1 drivers
+v000001c9602e6760_0 .net "a", 3 0, v000001c9602e6940_0;  1 drivers
+v000001c9602e6800_0 .net "b", 3 0, v000001c9602e69e0_0;  1 drivers
+v000001c9602e68a0_0 .net "o", 2 0, L_000001c960334370;  alias, 1 drivers
+L_000001c960334190 .cmp/gt 4, v000001c9602e6940_0, v000001c9602e69e0_0;
+L_000001c960334230 .cmp/eq 4, v000001c9602e6940_0, v000001c9602e69e0_0;
+L_000001c9603342d0 .cmp/gt 4, v000001c9602e69e0_0, v000001c9602e6940_0;
+L_000001c960334370 .concat [ 1 1 1 0], L_000001c9603342d0, L_000001c960334230, L_000001c960334190;
+    .scope S_000001c960327030;
+T_0 ;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v000001c9602e6a80_0, 0, 32;
+    %end;
+    .thread T_0, $init;
+    .scope S_000001c960327030;
+T_1 ;
+    %vpi_call/w 3 14 "$dumpfile", "wave.vcd" {0 0 0};
+    %vpi_call/w 3 15 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001c960327030 {0 0 0};
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v000001c960334050_0, 0, 32;
+T_1.0 ;
+    %load/vec4 v000001c960334050_0;
+    %cmpi/s 256, 0, 32;
+    %jmp/0xz T_1.1, 5;
+    %load/vec4 v000001c960334050_0;
+    %pad/s 8;
+    %split/vec4 4;
+    %store/vec4 v000001c9602e69e0_0, 0, 4;
+    %store/vec4 v000001c9602e6940_0, 0, 4;
+    %load/vec4 v000001c960334050_0;
+    %pushi/vec4 16, 0, 32;
+    %mod/s;
+    %load/vec4 v000001c960334050_0;
+    %pushi/vec4 16, 0, 32;
+    %div/s;
+    %cmp/s;
+    %flag_mov 8, 5;
+    %jmp/0 T_1.2, 8;
+    %pushi/vec4 4, 0, 4;
+    %jmp/1 T_1.3, 8;
+T_1.2 ; End of true expr.
+    %load/vec4 v000001c960334050_0;
+    %pushi/vec4 16, 0, 32;
+    %div/s;
+    %load/vec4 v000001c960334050_0;
+    %pushi/vec4 16, 0, 32;
+    %mod/s;
+    %cmp/e;
+    %flag_mov 9, 4;
+    %jmp/0 T_1.4, 9;
+    %pushi/vec4 2, 0, 4;
+    %jmp/1 T_1.5, 9;
+T_1.4 ; End of true expr.
+    %pushi/vec4 1, 0, 4;
+    %jmp/0 T_1.5, 9;
+ ; End of false expr.
+    %blend;
+T_1.5;
+    %jmp/0 T_1.3, 8;
+ ; End of false expr.
+    %blend;
+T_1.3;
+    %pad/s 3;
+    %store/vec4 v000001c9602e6b20_0, 0, 3;
+    %delay 10000, 0;
+    %load/vec4 v000001c9603340f0_0;
+    %load/vec4 v000001c9602e6b20_0;
+    %cmp/ne;
+    %jmp/0xz  T_1.6, 6;
+    %vpi_call/w 3 27 "$fatal", 32'sb00000000000000000000000000000001, "FAIL compare_4 vector=%0d expected=%h actual=%h", v000001c960334050_0, v000001c9602e6b20_0, v000001c9603340f0_0 {0 0 0};
+T_1.6 ;
+    %load/vec4 v000001c9602e6a80_0;
+    %addi 1, 0, 32;
+    %store/vec4 v000001c9602e6a80_0, 0, 32;
+    %load/vec4 v000001c960334050_0;
+    %addi 1, 0, 32;
+    %store/vec4 v000001c960334050_0, 0, 32;
+    %jmp T_1.0;
+T_1.1 ;
+    %load/vec4 v000001c9602e6a80_0;
+    %cmpi/ne 256, 0, 32;
+    %jmp/0xz  T_1.8, 4;
+    %vpi_call/w 3 35 "$fatal", 32'sb00000000000000000000000000000001, "Incomplete test" {0 0 0};
+T_1.8 ;
+    %vpi_call/w 3 37 "$display", "LAB1_PASS compare_4 cases=%0d", v000001c9602e6a80_0 {0 0 0};
+    %vpi_call/w 3 38 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_000001c960327030;
+T_2 ;
+    %delay 100000000, 0;
+    %vpi_call/w 3 43 "$fatal", 32'sb00000000000000000000000000000001, "Watchdog" {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "C:\Users\yunji\ece2\ece2_2026\LAB1\05_4bit_comparator\sim\tb_compare_4.sv";
+    "C:\Users\yunji\ece2\ece2_2026\LAB1\05_4bit_comparator\src\compare_4.v";
