@@ -3,13 +3,13 @@
   "fileName": "c:\\Users\\yunji\\ece2\\ece2_2026\\LAB1\\02_full_adder\\build\\sim\\wave.vcd",
   "markerTime": null,
   "altMarkerTime": null,
-  "displayTimeUnit": "ps",
+  "displayTimeUnit": "ns",
   "selectedSignal": {
     "name": "tb_full_adder.s",
     "msb": -1,
     "lsb": -1
   },
-  "zoomRatio": 0.12713984839940826,
+  "zoomRatio": 0.01093873678434269,
   "scrollLeft": 0,
   "defaultPixelTime": 100000,
   "displayedSignals": [
