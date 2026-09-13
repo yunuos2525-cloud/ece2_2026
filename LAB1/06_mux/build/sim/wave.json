@@ -1,0 +1,56 @@
+{
+  "extensionVersion": "1.5.4",
+  "fileName": "c:\\Users\\yunji\\ece2\\ece2_2026\\LAB1\\06_mux\\build\\sim\\wave.vcd",
+  "markerTime": null,
+  "altMarkerTime": null,
+  "displayTimeUnit": "ns",
+  "selectedSignal": {
+    "name": "tb_mux_4x1.z",
+    "msb": -1,
+    "lsb": -1
+  },
+  "zoomRatio": 0.009737676714672839,
+  "scrollLeft": 492469,
+  "defaultPixelTime": 1000000,
+  "displayedSignals": [
+    {
+      "dataType": "netlist-variable",
+      "netlistId": 2,
+      "name": "tb_mux_4x1.i",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "rowHeight": 1,
+      "verticalScale": 1,
+      "nameType": "fullPath",
+      "customName": "i",
+      "renderType": "multiBit",
+      "valueLinkEnable": false
+    },
+    {
+      "dataType": "netlist-variable",
+      "netlistId": 3,
+      "name": "tb_mux_4x1.s",
+      "numberFormat": "hexadecimal",
+      "colorIndex": 0,
+      "rowHeight": 1,
+      "verticalScale": 1,
+      "nameType": "fullPath",
+      "customName": "s",
+      "renderType": "multiBit",
+      "valueLinkEnable": false
+    },
+    {
+      "dataType": "netlist-variable",
+      "netlistId": 0,
+      "name": "tb_mux_4x1.z",
+      "numberFormat": "binary",
+      "colorIndex": 0,
+      "rowHeight": 1,
+      "verticalScale": 1,
+      "nameType": "fullPath",
+      "customName": "z",
+      "renderType": "binary",
+      "valueLinkEnable": false
+    }
+  ]
+}

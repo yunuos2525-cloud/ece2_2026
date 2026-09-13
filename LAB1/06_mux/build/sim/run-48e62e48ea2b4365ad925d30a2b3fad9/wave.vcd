@@ -1,0 +1,61 @@
+$date
+	Mon Sep 14 03:58:24 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_mux_4x1 $end
+$var wire 1 ! z $end
+$var reg 1 " expected $end
+$var reg 4 # i [3:0] $end
+$var reg 2 $ s [1:0] $end
+$var integer 32 % checked [31:0] $end
+$var integer 32 & n [31:0] $end
+$scope module dut $end
+$var wire 4 ' i [3:0] $end
+$var wire 2 ( s [1:0] $end
+$var wire 1 ! z $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 (
+b0 '
+b0 &
+b0 %
+b0 $
+b0 #
+0"
+0!
+$end
+#10000
+b1 $
+b1 (
+b1 &
+b1 %
+#20000
+b10 $
+b10 (
+b10 &
+b10 %
+#30000
+b11 $
+b11 (
+b11 &
+b11 %
+#40000
+1!
+b1 #
+b1 '
+b0 $
+b0 (
+b100 &
+b100 %
+#50000

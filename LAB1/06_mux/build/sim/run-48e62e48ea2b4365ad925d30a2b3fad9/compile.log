@@ -1,0 +1,4 @@
+warning: Some design elements have no explicit time unit and/or
+       : time precision. This may cause confusing timing results.
+       : Affected design elements are:
+       :   -- module mux_4x1 declared here: C:\Users\yunji\ece2\ece2_2026\LAB1\06_mux\src\mux_4x1.v:1
