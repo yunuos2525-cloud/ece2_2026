@@ -1,0 +1,35 @@
+$date
+	Mon Sep 14 09:38:09 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module tb_seg_decoder $end
+$var wire 8 ! seg_data [7:0] $end
+$var reg 4 " bcd [3:0] $end
+$var reg 8 # expected [7:0] $end
+$var integer 32 $ checked [31:0] $end
+$var integer 32 % n [31:0] $end
+$scope module dut $end
+$var wire 4 & bcd [3:0] $end
+$var reg 8 ' seg_data [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1100000 '
+b0 &
+b0 %
+b0 $
+b11111100 #
+b0 "
+b1100000 !
+$end
+#10
