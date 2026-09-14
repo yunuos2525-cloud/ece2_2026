@@ -2,7 +2,7 @@ module seg_decoder(input wire [3:0] bcd, output reg [7:0] seg_data);
     // [7:0] = {a,b,c,d,e,f,g,dp}; active high; hexadecimal 0..F; dp off.
     always @* begin
         case (bcd)
-            0:  seg_data = 8'h60;
+            0:  seg_data = 8'hfc;
             1:  seg_data = 8'h60;
             2:  seg_data = 8'hda;
             3:  seg_data = 8'hf2;
