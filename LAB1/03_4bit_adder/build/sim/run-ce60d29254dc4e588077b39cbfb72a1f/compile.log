@@ -1,4 +1,0 @@
-warning: Some design elements have no explicit time unit and/or
-       : time precision. This may cause confusing timing results.
-       : Affected design elements are:
-       :   -- module adder_4bit declared here: C:\Users\yunji\ece2\ece2_2026\LAB1\03_4bit_adder\src\adder_4bit.v:1

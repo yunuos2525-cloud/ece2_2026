@@ -1,5 +1,11 @@
 /build/
 /vivado/
+/LAB*/*/build/
+/LAB*/*/*.cache/
+/LAB*/*/*.hw/
+/LAB*/*/*.ip_user_files/
+/LAB*/*/*.runs/
+/LAB*/*/*.sim/
 **/__pycache__/
 *.pyc
 **/.Xil/
@@ -8,3 +14,7 @@
 .DS_Store
 Thumbs.db
 # reports/와 evidence/의 사진·파형·로그는 학생 제출 자료이므로 무시하지 않습니다.
+!/reports/
+!/reports/**
+!/evidence/
+!/evidence/**

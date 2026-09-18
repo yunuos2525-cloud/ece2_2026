@@ -1,3 +1,0 @@
-VCD info: dumpfile wave.vcd opened for output.
-FATAL: C:\Users\yunji\ece2\ece2_2026\LAB1\03_4bit_adder\sim\tb_adder_4bit.sv:24: FAIL adder_4bit vector=1 expected=01 actual=1f
-       Time: 20000  Scope: tb_adder_4bit

@@ -1,4 +1,0 @@
-warning: Some design elements have no explicit time unit and/or
-       : time precision. This may cause confusing timing results.
-       : Affected design elements are:
-       :   -- module compare_4 declared here: C:\Users\yunji\ece2\ece2_2026\LAB1\05_4bit_comparator\src\compare_4.v:1
