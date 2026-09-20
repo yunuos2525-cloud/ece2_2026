@@ -20,18 +20,23 @@ LAB2 이후 새 LAB에 사용하는 일반 정책이다. 제출 완료된 LAB1�
 
 - PRE: 모든 실험마다 설계 내용, 핵심 코드, 입력 조건, 예상 결과, 실제 VS Code simulation, VaporView waveform screenshot 및 관찰 동작과 예상 결과의 일치 여부 설명이 필요하다. 사용자 관찰 gate와 screenshot 존재를 각각 확인하며 PASS만으로 충족 처리하지 않는다. 당일 시연 2개 선정에 대비하여 모든 실험의 실제 시연 준비 상태를 확인한다.
 - POST: 모든 실험마다 Vivado simulation waveform과 해석이 필요하다. 예상/실제 비교, 수정 내용 및 수정 후 재검증 내용이 있으면 기록한다.
-- Board 제출: 조교가 선정한 2개 실험의 사진만 첨부한다. 선정 확인 전 DEMO_SELECTION_STATUS = NOT_SELECTED를 유지하고 임의 선택하지 않는다. 사진별 실험 번호·입력 조건·관찰 동작과 실제 시연 번호의 대응을 확인한다. 입력 수치 미확정은 UNKNOWN과 사용자 확인 queue로 유지한다.
+- LAB2 실험 후 제출: **8개 실험의 실제 동작 영상을 순서대로 모두 촬영하여 결과보고서에 반영**한다. 수업 중 시연은 그중 **1개 실험**을 선택/지정하여 수행한다. 시연 실험 번호가 확인되기 전에는 DEMO_SELECTION_STATUS = NOT_SELECTED를 유지하고 임의 선택하지 않는다.
+- board 사진은 영상의 대체물이 아니다. 실험별 POST 요구에서 별도 사진이 요구되면 추가하고, 그렇지 않으면 8개 동작 영상이 기본 증거다.
 - 전체 실험 inclusion 및 required evidence는 PRIMARY_BOUNDARY_CASE 분석과 별도로 검사한다. PRIMARY는 각 실험의 대표 waveform 설명 구간이며 전체 실험이나 필수 증거를 대신하지 않는다.
-- 모든 실험의 board raw evidence 보존과 제출 사진 선택은 별개이다. video/frame 존재에서 조교 선정을 추론하지 않는다. 기존 원본은 유지하며 선정 전 모든 실험의 제출용 board frame을 추가 생성할 필요는 없다.
+- 모든 실험의 board raw video를 보존한다. video 존재에서 시연 실험을 추론하지 않는다. 시연 1개는 실제 수업 지시/선택 결과로만 확정한다.
 
 ### LAB2 수업자료 적용 기준
 
 LAB2에서는 **실험별 요구사항이 서로 다를 수 있음**을 기본 전제로 한다. 공통 workflow가 특정 실험의 항목을 임의로 강제하지 않는다.
 
-각 실험을 시작하기 전에 반드시 수업자료에서 다음 두 종류의 요구사항을 별도로 추출한다.
+각 실험을 시작하기 전에 반드시 수업자료에서 다음 요구사항을 단계별로 분리하여 추출한다.
 
 1. `EXPERIMENT_REQUIREMENTS`: 실제 설계·실행·검증에서 해야 할 일
-2. `REPORT_REQUIREMENTS`: 예비보고서에 반드시 들어가야 할 내용·표·계산·파형·로그·설명
+2. `PRE_REPORT_REQUIREMENTS`: 실험 전에 반드시 들어가야 할 설계·예상·VS Code simulation·파형·설명
+3. `POST_REPORT_REQUIREMENTS`: 실험 후에 반드시 들어가야 할 Vivado·구현·bitstream·board·GitHub·비교/해석
+4. `REPORT_CAPTURE_CHECKLIST`: 실제 실험 당일 빠뜨리지 않고 수집해야 할 화면·로그·사진·영상·파일
+
+PRE와 POST 요구를 같은 `REPORT_REQUIREMENTS`로 뭉개지 않는다. 같은 교안이라도 “실험 전 레포트”와 “실험 후 레포트” 요구가 다를 수 있고, POST는 공통 요구와 실험별 추가 요구를 모두 가진다.
 
 두 문서는 같은 교안에서 추출하지만 역할이 다르다. 예를 들어 “16 ns에서 실패하는 이유를 계산한다”는 실행/검증 요구이면서 보고서 설명 요구가 될 수 있고, “전체 파형과 duty/tick/reset 확대 화면을 넣는다”는 명시적인 보고서 evidence 요구이다.
 
@@ -50,9 +55,9 @@ LAB2에서는 **실험별 요구사항이 서로 다를 수 있음**을 기본 �
 - 설정 변경/오류 기록 요구
 - 아직 확인되지 않은 항목
 
-#### REPORT_REQUIREMENTS 최소 필드
+#### PRE_REPORT_REQUIREMENTS 최소 필드
 
-- 교수/조교가 명시한 필수 제목 또는 내용 항목
+- 교수/조교가 명시한 PRE 필수 제목 또는 내용 항목
 - 설명해야 할 RTL/TB/`simulation.json`/XDC 역할
 - 반드시 작성할 상태표/예상표/계산 과정
 - 정상 PASS log 요구 여부
@@ -60,11 +65,42 @@ LAB2에서는 **실험별 요구사항이 서로 다를 수 있음**을 기본 �
 - 확대 waveform의 필수 시점/신호/구간
 - 수정/실패/복구 로그 또는 비교표 요구 여부
 - 특정 시점 expected/actual 비교 요구
-- 설정 변경/오류/도구 관련 기록 요구
 - Vivado 시작 전 작성해야 할 board 입력 순서/예상 LED 등
-- XDC가 현재 simulation에 사용되는지 여부처럼 구분해서 써야 할 사항
+- 설정 변경/오류/도구 관련 기록 요구
 - 제출 본문에 넣지 않을 내부 추적 항목
 - 요구 출처(교안 페이지/슬라이드/문장)
+
+#### POST_REPORT_REQUIREMENTS 최소 필드
+
+POST는 `COMMON_POST_REQUIREMENTS`와 실험별 `EXPERIMENT_POST_REQUIREMENTS`를 합쳐 관리한다.
+
+공통 요구 최소 항목:
+- Vivado Functional/Behavioral Simulation의 source hierarchy 화면, PASS/정상 파형, VS Code 결과와의 비교
+- synthesis/implementation 수행 결과와 각 단계의 성공/실패 근거
+- 실제 warning 목록과 warning별 해석
+- 사용 FPGA/device, pin/XDC, clock constraint(해당 LAB에서 요구한 값)
+- `write_bitstream Complete` 화면 또는 동등한 bitstream 생성 완료 근거
+- 생성 bitstream 파일명/상대경로와 실제 존재 확인
+- Program Device/장치 programming 화면
+- 실제 board 입력 조건과 사진/영상, 관찰 결과
+- 통합판이면 mode 전환, LCD mode명, 현재 회로 출력이 한 흐름으로 확인되는 증거
+- GitHub에 source/report/관찰 자료를 연결하고 README 등에서 제출 자료의 위치를 찾을 수 있게 하는 요구
+- 미수행/미확인 항목을 완료처럼 쓰지 않고 구분하는 요구
+
+실험별 추가 요구 최소 항목:
+- 해당 실험의 구체적인 Vivado 파형에서 보여야 할 신호/조건
+- 해당 실험의 물리 pin/부품/스위치/버튼/LED 설정
+- 실제 board에서 재현해야 할 동작(예: 초기화·증가·감소·순환)
+- 반드시 캡처해야 하는 synthesis/implementation/bitstream 화면
+- 특별히 기록해야 할 warning/constraint/설정 변경
+- 사진/영상의 필수 장면과 입력 조건
+- README/GitHub 연결 방식
+- 요구 출처(교안 페이지/슬라이드/실험 폴더의 “실험 후 레포트” 문장)
+
+#### 기존 `REPORT_REQUIREMENTS` 호환 규칙
+
+
+기존 파일명이나 오래된 문서에서 `REPORT_REQUIREMENTS`라고만 되어 있으면 문맥에 따라 PRE 또는 POST로 분해해 갱신한다. 새 LAB에서는 모호한 단일 파일을 만들지 않는다.
 
 각 항목은 `REQUIRED / OPTIONAL / NOT_REQUIRED / UNKNOWN`으로 판정한다. **교안에 없는 항목을 LAB1 관행이나 automation 편의 때문에 REQUIRED로 승격하지 않는다.**
 
@@ -209,6 +245,40 @@ POST에서 PRE 예상 ↔ VS Code 관찰 ↔ Vivado 결과 ↔ board 결과를 �
 
 이 단계가 끝나기 전에는 일반 template의 빈 항목을 보고 “수업 필수”라고 판단하지 않는다.
 
+## 9A. 실험 후 레포트 요구사항 추출
+
+POST를 시작하기 전에 PRE 요구를 재사용하지 말고 교안의 **공통 실험 후 레포트 슬라이드 + 각 실험 폴더/슬라이드의 개별 실험 후 레포트 요구**를 다시 읽는다.
+
+추출 순서:
+
+1. `COMMON_POST_REQUIREMENTS` — LAB 전체에 공통으로 적용되는 요구
+2. `EXPERIMENT_POST_REQUIREMENTS` — 각 실험에만 추가로 적용되는 요구
+3. 둘을 합친 `POST_CAPTURE_CHECKLIST` — 실험 당일 실제로 수집할 evidence
+4. 학생/ChatGPT 검수 후 Vivado/board 수행
+
+현재 확인된 공통 POST 요구의 예시는 다음과 같다.
+- Vivado 기능 simulation과 VS Code 결과 비교
+- 합성·구현 결과와 warning 해석, pin/clock/timing 조건, bit 파일 기록
+- Program Device 화면과 실제 입출력 사진·영상
+- 통합판의 버튼 mode 전환·LCD mode명·회로 출력 동시 확인
+- GitHub에 source·report·관찰 자료를 연결하고 미수행 항목을 구분
+
+실험별 요구 예시는 다음과 같이 별도 저장한다.
+- Vivado Sources hierarchy + simulation PASS waveform
+- 사용 부품/pin/clock constraint와 synthesis/implementation 결과
+- `write_bitstream Complete`, 생성 파일, 남은 warning 및 해석
+- 해당 회로의 실제 board 동작 사진/영상
+- GitHub/README에서 source/report/photo/video 연결
+
+위 예시는 현재 제공된 LAB2 자료에서 확인된 요구를 반영한 것이며, 다음 LAB에는 자동 일반화하지 않고 새 자료에서 다시 추출한다.
+
+권장 파일:
+- `reports/_automation/LABx_COMMON_POST_REQUIREMENTS.md`
+- `reports/_automation/LABx_<experiment>_POST_REQUIREMENTS.md`
+- `reports/_automation/LABx_POST_CAPTURE_CHECKLIST.md`
+
+POST 요구 추출이 끝나기 전에는 “Vivado 몇 장, board 몇 장이면 충분하다”고 임의 결정하지 않는다.
+
 ## 10. 실험별 세팅 자동화
 
 새 실험을 시작할 때 교안/제공 파일에 이미 존재하는 기계적 준비 작업은 Codex가 자동화한다. 목적은 학생이 단순 복사·이름 변경·경로 수정에 시간을 쓰지 않고, 회로 원리·시간 동작·검증 논리에 집중하게 하는 것이다.
@@ -324,25 +394,32 @@ TEAM_CONFIRMED인 수행 사실과 EVIDENCE_PENDING인 원본 전달 상태는 �
 
 ## 15. 사용자 board 영상/캡처 handoff
 
-board 원본 영상 정리와 보고서용 캡처 생성은 사용자 담당이다.
+실제 작동 영상의 GitHub 제출 여부는 LAB별 교수·조교·수업 요구를 우선하여 결정한다. **수업 요구**인 영상 제출과 **내부 workflow**인 SHA-256/중복 검사를 구분한다. 영상 제출 요구가 없으면 raw video를 local에 보관하거나 최종 제출에 불필요할 때 Git에서 제외할 수 있다. GitHub 영상 제출이 요구되면 사용자가 선정한 최종 영상은 공식 제출 evidence이며 `evidence/board/LABx/raw_videos/`에 정리하여 POST 작성 전에 video evidence commit과 push까지 확인한다.
 
-1. 실험 후 촬영한 원본 영상을 정리한다.
-2. 실험 번호별로 분류한다.
-3. 보고서에 사용할 대표 장면을 선택한다.
-4. screenshot/capture를 생성한다.
-5. 최종 사진 파일명을 실험 번호와 시험 조건이 드러나게 정리한다.
-6. 사진별 입력 조건과 실제 관찰 결과를 확인한다.
+영상 내용의 정리와 선택은 사용자 담당이다.
 
-기본 handoff는 evidence/board/LABx/frames/이며 사용자가 최종 선택한 사진만 저장하는 것을 권장한다. 파일명 규칙은 LABx_<실험번호>_<회로명>_<시험조건>.png이다. 파일명은 조건 추적용이며 입력값의 사실 근거는 사용자 확인이다.
+1. 실제 FPGA 동작을 촬영하고 실험별 원본 영상을 분류한다.
+2. 제출할 최종 영상을 선정하고 불필요한 영상의 제거 여부를 판단한다.
+3. 파일명과 실험 번호 대응, 각 영상의 실제 입력·출력 동작을 확인한다.
+4. 보고서용 정지 사진이 필요하면 대표 frame/capture를 직접 선택·생성한다.
+5. 사진별 입력 조건과 실제 관찰 결과를 확인한다.
 
-기본 구조:
+GitHub 영상 제출이 요구되는 LAB의 권장 구조는 다음과 같다. `raw_videos/`는 시간에 따른 입력 조작과 출력 변화를 보여주는 실제 작동 영상 제출 경로이고, `frames/`는 보고서 본문에 삽입하는 정지 이미지 경로이다. board 사진이 영상 제출을 대신하지 않으며, 영상만으로 보고서용 사진이 자동 확보된 것도 아니다.
 
     evidence/board/LABx/
-    └─ frames/
+    ├─ raw_videos/LABx_01_<experiment>_board.mp4
+    ├─ raw_videos/LABx_02_<experiment>_board.mp4
+    └─ frames/LABx_<experiment>_<condition>.png
 
-raw_videos/, contact_sheets/, classification/은 필수 요소가 아니다. 사용자가 필요하면 별도 보관하며 자동화는 최종 선정 frames/ 기준으로 진행한다. Codex는 raw video의 대표 장면 임의 선정, 사용자 확인 없는 frame 추출, 영상에서 실험 번호/버튼/스위치 상태 추론, 제출 사진 자동 선정을 기본적으로 수행하지 않는다.
+`contact_sheets/`와 `classification/`은 내부 검토용 선택 자료이며 제출 폴더에 자동 포함하지 않는다. 영상 제출 요구가 없는 LAB에서 `raw_videos/`도 필수 구조가 아니다. Codex는 임의 frame 추출, 영상만 보고 실험 번호·버튼·스위치 상태 추론, 최종 영상 자동 선정, 임의 재인코딩·압축, 사용자 확인 없는 rename을 기본적으로 수행하지 않는다.
 
-handoff 후 Codex는 파일 존재, evidence 경로, fact sheet/validation summary 연결, report image link, 캡션과 입력조건 정합성, DOCX/PDF 배치, Git 포함/제외 분류를 처리한다. 사진으로 직접 확인되지 않는 논리 극성/내부 신호값은 추론하지 않는다. 조교 선정 확인 전 DEMO_SELECTION_STATUS = NOT_SELECTED를 유지하며 해당 수업의 선정 실험 수와 실제 시연 번호를 확인한다.
+handoff 후 Codex는 파일 수·확장자·크기·SHA-256·중복, evidence 경로, fact sheet/validation summary 연결, report image/link, 캡션과 입력조건 정합성, DOCX/PDF 배치, Git 포함/제외 분류를 점검한다. 사진으로 직접 확인되지 않는 논리 극성/내부 신호값은 추론하지 않는다. 조교 선정 확인 전 DEMO_SELECTION_STATUS = NOT_SELECTED를 유지하며 해당 수업의 시연 실험 수와 실제 시연 번호를 확인한다.
+
+### VIDEO EVIDENCE READY — 영상 제출이 요구되는 LAB
+
+POST 본문을 쓰기 전에 요구된 실험 번호와 최종 영상의 1:1 대응을 확인한다. file count, filename, extension, 개별 bytes/MB와 전체 upload size, SHA-256, duplicate SHA, Git status, 일반 GitHub push 가능성을 점검하고 사용자가 최종 제출 대상으로 확인했는지 기록한다. 100 MB 이상 파일은 일반 GitHub repository push에 문제가 될 수 있음을 commit 전에 사용자에게 알리며 자동 압축·재인코딩하지 않는다.
+
+명시적 Git 작업 지시가 있으면 선정된 영상만 경로별로 stage하고 `git diff --cached --name-only`를 예상 파일 목록·수와 대조한다. contact sheet, 임시 frame, 비교 이미지, 관련 없는 untracked 파일은 video commit에 자동 포함하지 않는다. VIDEO EVIDENCE COMMIT → origin/main push → GitHub 경로 접근 확인을 마쳐야 이 gate를 통과한다. 요구가 없으면 `NOT_APPLICABLE`, 요구 여부가 불명확하면 `UNKNOWN`으로 두고 수업 요구를 확인한다. gate 통과 전에는 최종 POST 영상 URL과 제출 완료 상태를 확정하지 않는다.
 
 ## 16. POST 작성 전 사실 재검사
 
@@ -355,7 +432,34 @@ PRE/POST manifest는 reports/_automation/LABx_pre_manifest.md 및 LABx_post_mani
 
 두 POST 문서의 최소 필드는 실제 RTL 핵심 구조, simulation test condition, expected, 사용자 확인 observed waveform, PASS/case count, Vivado version, FPGA part, synthesis/implementation 상태, DRC, timing, bitstream path와 확인 범위, Programmed evidence, board evidence, team-performed stage, unknown/unverified item이다. 각 사실에 source/run/파일 또는 명시적 사용자 관찰 근거를 붙인다. Work는 전달받은 두 문서를 report draft의 우선 source of truth로 사용한다. 값이 충돌하거나 필수 사실이 없으면 추정하여 채우지 않는다.
 
+영상 제출 판단을 위해 fact sheet/validation summary에 `Board video required: YES/NO/UNKNOWN`, `Required video count`, `Final video count`, `Video evidence commit`, `Video GitHub URL`, `Video path`, `Video GitHub verified: YES/NO`를 필요 시 기록한다. required일 때는 본문 작성 전에 최종 영상 수·실험 번호·commit·원격 URL을 확인하고, 수업 요구가 아니라 내부 점검인 SHA-256과 중복 결과는 별도 provenance로 관리한다. `UNKNOWN`이나 필수 영상 미확보 상태를 완료로 해석하지 않는다.
+
 작성 전과 freeze 직전에 manifest/fact sheet/validation summary를 현재 파일과 다시 검사한다. 오래된 metadata, 추출 미완료 상태, 없는 frame 링크, 과거 cursor/Value 설명, 실제 이미지 수와 다른 manifest는 갱신하거나 최종 source of truth에서 제외한다. 과거 internal 문서의 상태를 최종 사실로 사용하지 않으며 원본 evidence를 삭제하지 않는다.
+
+### POST 기본 실행 순서
+
+1. reviewed source와 CODE COMMIT 확인
+2. VS Code simulation/evidence 확인
+3. Vivado simulation·implementation/evidence 확인
+4. 실제 board 기능 시험과 사용자 관찰 확인
+5. 사용자가 제출 영상 정리·선정
+6. 사용자가 필요한 보고서용 frame/capture 정리
+7. Codex가 영상 수·크기·hash·중복·Git 상태 검사
+8. 영상 제출 required이면 명시적 지시 아래 VIDEO EVIDENCE COMMIT 생성
+9. required이면 video commit을 origin/main에 push
+10. required이면 GitHub 영상 경로와 commit-fixed URL 확인
+11. fact sheet / validation summary / manifest 갱신
+12. POST Markdown 작성
+13. Markdown 내용·그림·링크 QA
+14. 명시적 지시 아래 REPORT SOURCE COMMIT 생성
+15. DOCX/PDF 생성
+16. 모든 페이지 visual QA 및 Markdown과 산출물 대조
+17. 명시적 지시 아래 FINAL REPORT COMMIT 생성
+18. 해당 제출본을 가리키는 annotated final tag 생성
+19. main push 성공 후 tag push
+20. GitHub web에서 보고서·영상 경로와 tag 최종 확인
+
+영상 제출이 required이면 8~10을 12보다 먼저 마친다. 영상 제출이 `NOT_APPLICABLE`이면 8~10을 생략하고 사유를 기록한다. 단계의 순서는 제출 기준이며 Git add/commit/push/tag는 별도 사용자 지시가 있을 때만 실행한다.
 
 ## 17. POST 본문 구성과 내용 종료 조건
 
@@ -373,7 +477,49 @@ PRE/POST manifest는 reports/_automation/LABx_pre_manifest.md 및 LABx_post_mani
 
 board는 해당 실험 안에서 simulation → waveform → board validation 순서로 끝낸다. 설명은 시험 조건 → 예상 동작 → 실제 관찰 → 비교로 간결하게 쓴다. 전체 결과 종합표, 별도 “추가 확인 및 정리” 절, board만 모은 독립 장, 이미 설명한 expected/observed 반복은 기본적으로 만들지 않는다. 비교 절은 플랫폼 간 대응/차이에 집중한다.
 
-모든 required experiment, expected/waveform 비교, selected board experiment, 교수 요구 implementation evidence, factual uncertainty 명시, 중복 제거, inline citation, placeholder 0, broken link 0을 충족하면 기술 내용 수정을 종료한다. 이후 layout/QA로 진행한다. QA에서 사실 오류가 발견되면 freeze를 해제하고 관련 사실/Markdown/gate를 재검사한다.
+모든 required experiment, expected/waveform 비교, board experiments / demo experiment, 교수 요구 implementation evidence, factual uncertainty 명시, 중복 제거, inline citation, placeholder 0, broken link 0을 충족하면 기술 내용 수정을 종료한다. 영상 제출 required인 LAB에서는 사용자 선정 영상 준비, VIDEO EVIDENCE COMMIT·remote push·GitHub URL 확인, 보고서의 source/video URL 반영까지 완료되어야 POST CONTENT FROZEN을 통과한다. 이후 layout/QA로 진행한다. QA에서 사실 오류나 새 제출 요구를 발견하면 freeze를 해제하고 관련 사실/Markdown/gate를 재검사한다.
+
+## 17A. 보고서 문체·내용 전개 고정 원칙
+
+LAB2 PRE 작성 과정에서 확정한 다음 작성 원칙을 PRE/POST 공통 기본값으로 사용한다. 수업의 명시적 형식이 있으면 그 요구를 우선한다.
+
+### 전체 전개
+- 자료를 요약하는 문서가 아니라 **설계 목적 → 핵심 RTL → 예상 동작 → 실제 검증 → 해석**의 흐름으로 쓴다.
+- 파형/보드 설명은 논리적으로 **시험 조건 → 예상 결과 → 실제 관찰 → 해석** 순서를 지키되, 매 문단마다 `시험 조건/예상/관찰/해석` 라벨을 기계적으로 반복하지 않는다.
+- 예: “35 ns 상승 edge에서 load와 transfer를 동시에 1로 두었다. stored는 새 입력 3을 저장하지만 value는 edge 직전 stored=A를 사용하므로 3A가 예상된다. 실제 파형에서도 stored=3, value=A가 확인되었고 다음 edge에서 33으로 변하였다.”처럼 자연스럽게 쓴다.
+- `정상이다`, `예상대로 동작했다`만 쓰지 않고 **어떤 입력에서 어떤 expected와 실제 값이 일치했는지** 명시한다.
+- 같은 사실을 표·본문·결론에서 반복하지 않는다. 표는 관계/값 비교, 본문은 계산 근거와 의미 해석을 담당한다.
+- PRE는 설계와 예상 중심, POST는 **PRE 예상 → Vivado 실제 → board 실제 → 비교/해석** 중심이다.
+
+### 문체
+- 자연스러운 학생 공학 보고서체를 사용하고, 보고서 제작 과정·AI/automation 내부 사정을 드러내는 문장을 삭제한다.
+- 영어가 더 자연스러운 기술어(reset, enable, hold, state, clock edge, tick, load, transfer, blank, scan, PASS/FAIL, TB)는 억지 번역하지 않고 문서 안에서 통일한다.
+- 다음 표현은 피하고 실제 신호/동작으로 쓴다: `상태 버스`, `비에지`, `tick masking`, `순차 상태`, `제어 중지`, `에지의 소비`, `무지연 반응`.
+- `제공된 자료에서 확인되지 않는다`, `재캡처하지 않았다`, `별도 화면은 사용하지 않는다`, `이 실험에는 수정 실험이 없다`처럼 작성 과정이 드러나는 문장은 제출 본문에서 제거한다.
+- 내부 provenance 상태명, QA 메모, automation 용어를 제출 본문에 노출하지 않는다.
+
+### 코드/표/그림
+- 코드 전체 listing 대신 **설계 원리를 가장 잘 보여주는 핵심 RTL 1~2개 block**만 사용한다.
+- wrapper, `simulation.json`, `input_frontend`는 해당 실험 원리를 이해하는 데 필요할 때만 본문에 설명한다.
+- 그림은 많이 넣는 것이 목적이 아니라 각각 무엇을 증명하는지 설명한다.
+- 표에 이미 있는 내용을 바로 아래 문단에서 그대로 반복하지 않는다.
+- 수정 실험은 **무엇을 수정했는가 → 왜 잘못된 결과가 예상되는가 → 동일 TB에서 어디서 FAIL했는가 → 원복 후 다시 PASS했는가** 순서로 설명한다.
+
+### 실험별 전개
+- Counter/Divider/Register/Shift/PISO는 `설계 목적·동작 원리 → 핵심 RTL → 예상 동작 → simulation/파형 → 오류 검출(요구 시)`가 기본이다.
+- Moore/Mealy는 `설계 목적 → state/output 관계 → 핵심 RTL → 예상 동작 → simulation → 오류 검출`.
+- Segment Scan은 `설계 구조 → segment pattern/scan 원리 → 핵심 RTL → 예상 동작 → simulation → 오류 검출`.
+- 08A Integrated는 `통합 구조 → mode별 기능 → 핵심 제어 RTL → 정상 통합 simulation → 대표 동작 검증 → 오류 검출`.
+- 실험별 소제목은 완전히 동일하게 강제하지 않는다. 독자가 지금 무엇을 읽는지 빠르게 알 수 있도록 회로 특성에 맞게 선택한다.
+
+### 보드 설명
+- PRE에서는 N8/N4 조작, DIP/SW 설정, LED mapping, 1 kHz 실제 주기 같은 물리 조작 설명을 각 실험 본문에 흩뿌리지 않고 보드 계획 절에 모은다.
+- POST에서는 각 실험의 board 결과가 실제 증거이므로 simulation → board → 비교가 자연스럽게 이어지게 하되, 공통 장비 설정은 한 번만 설명한다.
+- 수행하지 않은 Vivado/board 결과는 계획 또는 미확인으로만 쓴다.
+
+### 내용 freeze
+- 기술 내용이 검증 완료되면 `CONTENT_FROZEN`으로 두고 이후에는 layout만 수정한다.
+- PDF 시각 QA 때문에 검증된 expected, PASS/FAIL 시점, check 수, waveform 해석을 다시 쓰지 않는다.
 
 ## 18. Work → repository와 Markdown 최종 QA
 
@@ -392,7 +538,7 @@ PDF 전 모든 image link를 해석하여 실제 파일 존재를 검사한다. 
 | placeholder | 대괄호 빈칸/TODO/작성용 표식 등 템플릿 placeholder count = 0; 인용 번호와 정상 HDL 문법은 구분 |
 | 이미지/링크 | Markdown 기준 경로 검사, broken image = 0 및 broken link = 0 |
 | 편집 메모 | HTML 편집 주석 = 0; template 지침/내부 QA 메모도 본문에서 제거 |
-| 제출 추적 | 수업자료/REPORT_REQUIREMENTS가 요구하는 범위의 GitHub URL, tag, CODE COMMIT을 확인. 요구되지 않은 commit hash를 제출 본문에 강제하지 않음 |
+| 제출 추적 | 수업자료/REPORT_REQUIREMENTS가 요구하는 범위의 GitHub URL, tag, CODE COMMIT을 확인. 영상 제출 required이면 VIDEO EVIDENCE COMMIT·실제 경로·요구된 영상 수·commit-fixed 영상 URL·최종 tag 이름을 대조하고 CODE COMMIT과 혼동하지 않음. 요구되지 않은 commit hash를 제출 본문에 강제하지 않음 |
 | 참고문헌 | inline citation ↔ 참고문헌 항목 대응; 단순 참고문헌 존재만으로 통과시키지 않음 |
 | board | POST 선정 실험의 최종 frames 존재, 실험 번호/입력/관찰/사용자 확인 대응 |
 | bitstream | POST 경로와 확인 범위 명시; 생성 파일과 programming 사용 파일 구분 |
@@ -400,7 +546,7 @@ PDF 전 모든 image link를 해석하여 실제 파일 존재를 검사한다. 
 
 PRE에는 실제 board evidence/bitstream 결과를 요구하지 않고 verification plan을 확인한다. POST 필수 evidence 누락을 NOT_APPLICABLE로 우회하지 않는다. 확인되지 않은 값은 정확한 한계 문장으로 쓰되 필수 증거 gate는 pending 상태로 유지한다.
 
-submit tag/commit hash를 보고서에 넣는 것은 해당 수업자료 또는 `REPORT_REQUIREMENTS`가 요구할 때만 필수이다. 사용할 경우 승인된 예정 tag는 아직 생성되지 않았음을 명시하고 존재하는 링크로 꾸미지 않는다. PDF QA에서는 이름/계획을 확인하고 GATE 8에서 실제 tag/원격 링크를 확인한다. CODE COMMIT은 실제 확인된 source commit이며 현재 HEAD를 근거 없이 source commit으로 쓰지 않는다.
+submit tag/commit hash를 보고서에 넣는 것은 해당 수업자료 또는 `REPORT_REQUIREMENTS`가 요구할 때만 필수이다. 사용할 경우 승인된 예정 tag는 아직 생성되지 않았음을 명시하고 존재하는 링크로 꾸미지 않는다. PDF QA에서는 이름/계획을 확인하고 SUBMITTED gate에서 실제 tag/원격 링크를 확인한다. CODE COMMIT은 실제 확인된 source commit이며 현재 HEAD나 영상 commit을 근거 없이 source commit으로 쓰지 않는다.
 
 ## 19. Git commit/staging/tag 분리
 
@@ -409,17 +555,20 @@ submit tag/commit hash를 보고서에 넣는 것은 해당 수업자료 또는 
 | 역할 | 포함 대상 |
 |---|---|
 | A. CODE COMMIT | 검증된 RTL/TB/XDC/simulation.json source 상태 |
-| B. EVIDENCE COMMIT | simulation/waveform/board/fact sheet 등 근거 |
-| C. REPORT SOURCE COMMIT | 최종 Markdown report |
-| D. FINAL REPORT COMMIT | DOCX/PDF |
+| B. EVIDENCE COMMIT | simulation/waveform/PASS/implementation 등 근거 |
+| C. VIDEO EVIDENCE COMMIT | GitHub 제출이 요구되는 실제 FPGA 작동 영상 |
+| D. REPORT SOURCE COMMIT | 최종 Markdown report |
+| E. FINAL REPORT COMMIT | DOCX/PDF |
 
-보고서의 “code commit”은 A이다. D를 code commit으로 쓰거나 문서가 자기 자신을 포함하는 commit hash를 요구하지 않는다. source commit 외 source hash/run-to-source 근거와 dirty 상태도 확인한다.
+보고서의 “source code commit”은 A이다. 영상 제출 commit이 새로 생겨도 source가 바뀌지 않았다면 CODE COMMIT을 영상 commit으로 바꾸지 않는다. FINAL REPORT COMMIT을 code commit으로 쓰거나 문서가 자기 자신을 포함하는 commit hash를 요구하지 않는다. source commit 외 source hash/run-to-source 근거와 dirty 상태도 확인한다.
 
-git add .은 기본적으로 사용하지 않는다. include/exclude/review 분류 → explicit path staging → git diff --cached --name-only → 예상 파일 목록/파일 수 검증 → commit 순서로 진행한다. 이미 staged된 사용자 파일도 확인하며 자동으로 섞거나 unstage하지 않는다. 의도하지 않은 파일이 있으면 commit을 멈춘다.
+제출 링크는 가능하면 움직이는 `main` 대신 확인된 commit-fixed URL을 사용한다. source는 `https://github.com/<user>/<repo>/tree/<CODE_COMMIT>/LABx`, 영상은 `https://github.com/<user>/<repo>/tree/<VIDEO_COMMIT>/evidence/board/LABx/raw_videos`처럼 독립된 버전을 가리킨다. URL이 실제 commit의 경로와 일치하는지 확인한다.
 
-기본 제외 후보는 .xpr, .lnk, local generated folders, raw video, contact sheet, temporary comparison image, stale metadata, 불필요한 intermediate file이다. 수업 요구/repository 정책상 필요하면 검토 후 포함한다. raw/contact/comparison 이미지를 자동으로 제출 commit에 넣지 않는다.
+`git add .` 또는 `git add LABx evidence reports`처럼 범위가 넓은 staging은 기본적으로 사용하지 않는다. LAB2 PRE에서 LAB1 board 자료가 섞인 사례처럼 인접 LAB/old evidence가 함께 들어갈 수 있다. include/exclude/review 분류 → **실험/증거/보고서별 explicit path staging** → `git diff --cached --name-only` 또는 `git status`로 전체 staged 목록 확인 → 예상 파일 목록/파일 수 검증 → commit 순서로 진행한다. 이미 staged된 사용자 파일도 확인하며 자동으로 섞거나 unstage하지 않는다. 의도하지 않은 파일이 있으면 commit을 멈춘다.
 
-PRE/POST tag는 LABx_PRE_SUBMIT / LABx_POST_SUBMIT로 구분한다. 기존 tag를 덮어쓰지 않는다. POST tag는 최종 DOCX/PDF가 포함된 FINAL REPORT COMMIT에 생성한다. 승인된 향후 제출 순서는 final report commit → annotated tag 생성 → main push → tag push → GitHub web 확인이다. 실제 branch가 main인지 확인하고 다르면 임의 checkout/push하지 않는다. 제출 gate만 통과해도 자동 Git 작업 권한이 생기지 않는다.
+기본 제외 후보는 .xpr, .lnk, local generated folders, contact sheet, temporary comparison image, stale metadata, 불필요한 intermediate file이다. raw video는 **해당 LAB의 GitHub 제출 요구에 따라 포함/제외를 결정**하며 무조건 제외하지 않는다. 영상 제출 required이면 사용자가 선정한 영상만 explicit staging하고 파일 수를 확인한다. contact/comparison 이미지를 자동으로 제출 commit에 넣지 않는다.
+
+PRE/POST tag는 LABx_PRE_SUBMIT / LABx_POST_SUBMIT 등의 실제 승인된 이름으로 구분한다. 영상 제출 required이면 POST final tag는 VIDEO EVIDENCE COMMIT, REPORT SOURCE COMMIT, DOCX/PDF가 모두 반영된 FINAL REPORT COMMIT에 생성한다. 기존 제출 tag 뒤에 새 요구가 확인되면 기존 tag를 force-move/삭제하지 않고 별도 final tag를 만든다. 처음부터 요구를 확인한 LAB에는 불필요한 중간 제출 tag를 만들지 않는다. 승인된 향후 제출 순서는 final report commit → annotated tag 생성 → main push → tag push → GitHub web 확인이다. 실제 branch가 main인지 확인하고 다르면 임의 checkout/push하지 않는다. 제출 gate만 통과해도 자동 Git 작업 권한이 생기지 않는다.
 
 main push 성공 후에만 tag를 push한다. local HEAD / origin/main / 원격 tag의 peeled commit 및 ahead/behind를 확인하고 기존 modified/untracked가 그대로인지 검사한다. GitHub web 확인은 실제 웹에서 제출 파일과 해당 버전을 확인한 경우에만 완료로 기록한다.
 
@@ -428,7 +577,8 @@ main push 성공 후에만 tag를 push한다. local HEAD / origin/main / 원격 
 다음은 내부 기본값이며 수업의 명시적 REQUIRED_FORMAT이 있으면 그 범위를 우선 적용한다.
 
 - A4 portrait, 표지 1페이지 독립 1단.
-- 본문부터 참고문헌/부록 끝까지 고정 2단, 페이지 번호는 본문부터.
+- 표지는 과도한 장식 없이 큰 제목 + 간단한 정보표 중심으로 구성한다. 기준 commit/tag가 수업상 필요할 때는 실제 값만 넣고 미생성 tag를 완료처럼 쓰지 않는다.
+- 본문부터 참고문헌/부록 끝까지 고정 2단, 페이지 번호는 표지에는 넣지 않고 본문 첫 페이지부터 하단 중앙에 배치한다.
 - waveform도 single-column width로 배치하고 세부 값은 본문의 시험조건/예상/관찰 설명으로 보완.
 - waveform 때문에 2단 → 1단 → 2단 full-width section을 기본적으로 만들지 않음.
 - 최종 제출은 PDF; editable DOCX도 관리.
@@ -455,15 +605,17 @@ DOCX/PDF 생성 성공만으로 완료 처리하지 않는다. PDF의 모든 페
 |---|---|
 | GATE 0 — REQUIREMENTS READY | 해당 실험의 EXPERIMENT_REQUIREMENTS + REPORT_REQUIREMENTS 추출, 출처 기록, 학생/ChatGPT 검수 |
 | GATE 1 — SOURCE READY | 자동 세팅 diff 검수 + 학생 이해 확인 + reviewed source |
-| GATE 2A — NORMAL VS CODE VERIFIED | 정상 PASS/check + 사용자 필수 waveform 관찰/screenshot + REPORT_REQUIREMENTS의 정상 검증 항목 충족 |
+| GATE 2 — VS CODE VERIFIED | 정상 PASS/check + 사용자 필수 waveform 관찰/screenshot + REPORT_REQUIREMENTS의 정상 검증 항목 충족 |
 | GATE 2B — MODIFICATION VERIFIED | **조건부**. MODIFICATION_REQUIRED=REQUIRED인 실험에서 교안 지정 변경 → 실제 FAIL/원인 비교 → 복구 → 요구된 recovery 확인 |
 | GATE 3 — PRE REPORT READY | 해당 실험 REPORT_REQUIREMENTS 전 항목 충족 + pre Markdown/image/내용 QA |
 | GATE 4 — VIVADO VERIFIED | Behavioral Simulation + 요구 implementation 단계 + DRC/timing/bitstream evidence 및 정확한 적용 범위 |
-| GATE 5 — BOARD EVIDENCE READY | 사용자가 선정 실험의 최종 board frames를 준비하고 입력 조건/관찰을 확인 |
-| GATE 6 — POST CONTENT FROZEN | 최신 fact sheet + validation summary + repository final Markdown + placeholder/image QA 및 내용 종료 조건 |
-| GATE 7 — PDF VERIFIED | 최종 DOCX/PDF + 모든 페이지 render/visual QA |
-| GATE 8 — SUBMITTED | 해당 수업의 실제 제출 방식 완료. Git/GitHub 제출이 요구되는 경우에만 명시적 사용자 승인 아래 필요한 commit/tag/push/원격 확인 |
+| GATE 5 — BOARD FUNCTION VERIFIED | 실제 FPGA 기능을 사용자 관찰/측정과 입력 조건으로 확인; bitstream/Programmed 화면만으로 통과 불가 |
+| GATE 6 — BOARD MEDIA READY | 사용자가 제출 영상과 필요한 보고서용 frame을 정리·선정하고 실험 번호/관찰 대응을 확인 |
+| GATE 7 — VIDEO EVIDENCE READY | **조건부**. 영상 GitHub 제출 required이면 영상 수·파일·hash·사용자 선정 확인 → VIDEO EVIDENCE COMMIT → push → GitHub URL 확인; 요구가 없으면 NOT_APPLICABLE |
+| GATE 8 — POST CONTENT FROZEN | 최신 fact sheet + validation summary + final Markdown + placeholder/image/link QA; required 영상의 URL·commit·수 충족 |
+| GATE 9 — PDF VERIFIED | 최종 DOCX/PDF + 모든 페이지 render/visual QA + Markdown 내용 대조 |
+| GATE 10 — SUBMITTED | FINAL REPORT COMMIT + annotated final tag + main/tag push + GitHub web 확인. Git 작업은 별도 명시적 사용자 지시가 있을 때만 수행 |
 
-PRE 경로는 `GATE 0 → 1 → 2A → [2B if REQUIRED] → 3 → 7`이며, 실제 제출까지 진행할 때만 `→ 8`을 추가한다. 수정 실험이 NOT_REQUIRED이면 GATE 2B를 생략하며 미통과로 취급하지 않는다. UNKNOWN이면 교안을 재확인하기 전 PRE 완료로 넘기지 않는다. POST는 동일 source와 요구사항을 기준으로 4 → 5 → 6 → 7 → 8을 추가한다. source 또는 수업 요구 해석이 바뀌면 영향받는 gate를 다시 통과한다.
+PRE 경로는 `GATE 0 → 1 → 2 → [2B if REQUIRED] → 3 → 9`이며, 실제 제출까지 진행할 때만 `→ 10`을 추가한다. PRE에는 board/video 결과를 요구하지 않는다. 수정 실험이 NOT_REQUIRED이면 GATE 2B를 생략하며 미통과로 취급하지 않는다. UNKNOWN이면 교안을 재확인하기 전 PRE 완료로 넘기지 않는다. POST는 동일 source와 요구사항을 기준으로 `4 → 5 → 6 → [7 if video required] → 8 → 9 → 10`을 추가한다. 영상 제출이 요구되지 않으면 GATE 7을 NOT_APPLICABLE로 기록한다. source 또는 수업 요구 해석이 바뀌면 영향받는 gate를 다시 통과한다.
 
 문서 개선 자기 검수에서는 수업 요구와 내부 기본값 구분, 실험별 EXPERIMENT_REQUIREMENTS/REPORT_REQUIREMENTS 분리, 조건부 수정 실험, 동적 PRE 구성, 팀 원본 부재/미수행 구분, Programmed/board 구분, bitstream 사용 파일 주장 범위, Work/local handoff, Git 요구사항의 조건부 적용을 확인한다.

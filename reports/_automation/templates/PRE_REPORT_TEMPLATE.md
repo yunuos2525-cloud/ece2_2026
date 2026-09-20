@@ -203,9 +203,42 @@ failure waveform이 교안에 없으면 만들 필요가 없다.
 - failure/recovery의 evidence 종류가 교안 요구와 일치하는가? (예: failure log만 요구되면 waveform 강제 금지)
 - 보고서에 commit hash/run ID/도구 버전을 넣는 경우 실제 수업 요구가 있는가?
 - 수행하지 않은 Vivado/board 결과를 쓰지 않았는가?
+- POST에서 실제 작동 영상 제출이 요구되는지 미리 확인하고, required이면 실험 중 촬영할 조건·실험 번호를 계획했는가? PRE에는 아직 수행하지 않은 board/video 결과를 쓰지 않는다.
 - placeholder/broken image/link/내부 작성 메모가 제거됐는가?
 - 최종 PDF layout/visual QA는 별도 workflow gate에 따라 수행한다.
 
+## 내부 작성 스타일 / PDF 형식 — 제출 본문 제외
+
+
+### 제출용 문체와 구조 세부 원칙
+
+- 큰 구조는 `공통 목적/검증 조건 → 실험별 설계·예상·simulation → 통합 실험 → Vivado/board 사전 계획 → 참고문헌`처럼 독자가 검증 흐름을 따라가기 쉽게 구성한다.
+- 실험별 소제목을 완전히 동일하게 강제하지 않는다.
+- Counter/Divider/Register/Shift/PISO: 설계 목적·동작 원리 → 핵심 RTL → 예상 동작 → simulation/파형 → 오류 검출(요구 시)
+- Moore/Mealy: 설계 목적 → state/output 관계 → 핵심 RTL → 예상 동작 → simulation → 오류 검출
+- Segment Scan: 설계 구조 → segment pattern/scan 원리 → 핵심 RTL → 예상 동작 → simulation → 오류 검출
+- Integrated: 통합 구조 → mode별 기능 → 핵심 제어 RTL → 정상 통합 simulation → 대표 동작 검증 → 오류 검출
+- `시험 조건/예상/관찰/해석`의 논리는 유지하되 네 라벨을 매번 굵게 반복하지 않고 자연스러운 서술형 문단으로 쓴다.
+- 어색한 번역어보다 실제 신호명과 익숙한 기술어(reset, enable, state, clock edge, tick, load, transfer, blank, scan, PASS/FAIL)를 사용한다.
+- `상태 버스`, `비에지`, `tick masking`, `제어 중지`, `에지의 소비` 같은 표현은 사용하지 않는다.
+- `제공된 자료에서 확인되지 않는다`, `재캡처하지 않았다`, `이 실험에는 수정 실험이 없다` 등 보고서 제작 과정이 드러나는 문장을 제출 본문에서 삭제한다.
+- 코드 전체 파일 대신 핵심 RTL 1~2개 block만 넣는다.
+- 표는 관계를 보여주고 본문은 중요한 경계조건과 이유를 설명한다. 같은 내용을 반복하지 않는다.
+- PRE의 물리 보드 조작·1 kHz 실제 시간 계산·스위치/버튼 순서는 가능하면 보드 계획 절에 모은다.
+
+
+- 보고서 전개는 **설계 목적/원리 → 시험 조건 → 예상 결과 → 실제 VS Code 관찰 → 해석**을 중심으로 한다.
+- waveform 설명은 반드시 **시험 조건 → 예상 결과 → 관찰 결과 → 해석** 순서로 쓴다.
+- 같은 expected/observed를 표와 본문에서 반복하지 않는다.
+- 표는 값 비교에, 본문은 계산 근거와 의미 해석에 사용한다.
+- 내부 automation 용어와 QA 상태명은 제출 본문에 쓰지 않는다.
+- 기술 내용이 검증 완료되면 내용은 고정하고 이후 수정은 layout 중심으로 한다.
+- 기본 PDF: 표지 1단 / 본문 전체 2단 / 모든 waveform·FAIL log·code·table은 각 column 안 / full-width 금지.
+- 일반 본문은 양쪽 맞춤, 표·code·caption·긴 식별자는 예외 가능.
+- 한국어 단어를 음절 중간에서 강제로 자르지 않는다.
+- 표지에는 페이지 번호 없음, 본문 첫 페이지부터 하단 중앙 page number.
+- 표지 commit/tag는 수업 요구 또는 제출 추적 필요 시 실제 값만 사용하며, code commit과 final report commit을 구분한다.
+
 ### PRE gate 요약
 
-`GATE 0 REQUIREMENTS READY → GATE 1 SOURCE READY → GATE 2A NORMAL VERIFIED → [GATE 2B if REQUIRED] → GATE 3 PRE REPORT READY`
+`GATE 0 REQUIREMENTS READY → GATE 1 SOURCE READY → GATE 2 VS CODE VERIFIED → [GATE 2B if REQUIRED] → GATE 3 PRE REPORT READY → GATE 9 PDF VERIFIED`
