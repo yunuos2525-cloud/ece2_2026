@@ -10,9 +10,9 @@
 | 대상 | 01 Counter ~ 08 Segment Scan, 08A Integrated |
 | 검증 환경 | VS Code · Icarus Verilog · VaporView |
 | 프로젝트 | ece2_2026 / LAB2 |
-| 기준 커밋 | 미지정 (LAB2 미커밋) |
+| 기준 커밋 | 2f7c83ed7a9ac0e78f9ecae6f56da58015f5270b |
 | GitHub 주소 | https://github.com/yunuos2525-cloud/ece2_2026 |
-| 제출 태그 | 미지정 |
+| 제출 태그 | LAB2_SUBMIT |
 
 <!-- PDF: 표지는 1단, 아래 A~K 및 참고문헌은 2단 -->
 
