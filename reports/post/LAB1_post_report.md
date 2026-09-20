@@ -18,11 +18,17 @@
 
 프로젝트: ece2_2026 / LAB1
 
-GitHub 주소: [https://github.com/yunuos2525-cloud/ece2_2026](https://github.com/yunuos2525-cloud/ece2_2026)
+GitHub repository: [https://github.com/yunuos2525-cloud/ece2_2026](https://github.com/yunuos2525-cloud/ece2_2026)
 
-제출 tag: LAB1_POST_SUBMIT
+Source code: [https://github.com/yunuos2525-cloud/ece2_2026/tree/246d6b621ce5b7a30d8a71a98c3e03693e69c9de/LAB1](https://github.com/yunuos2525-cloud/ece2_2026/tree/246d6b621ce5b7a30d8a71a98c3e03693e69c9de/LAB1)
 
-최종 code commit: 246d6b6
+Actual operation videos: [https://github.com/yunuos2525-cloud/ece2_2026/tree/c4943c324671c74ba7c7ccb56131649367458d6c/evidence/board/LAB1/raw_videos](https://github.com/yunuos2525-cloud/ece2_2026/tree/c4943c324671c74ba7c7ccb56131649367458d6c/evidence/board/LAB1/raw_videos)
+
+Source code commit: 246d6b6
+
+Board video commit: c4943c3
+
+제출 tag: LAB1_POST_FINAL
 
 
 
@@ -31,6 +37,8 @@ GitHub 주소: [https://github.com/yunuos2525-cloud/ece2_2026](https://github.co
 조합논리회로는 현재 입력 조합에 따라 출력이 결정되며, 진리표나 논리식을 바탕으로 RTL로 기술할 수 있다 [1]. LAB1에서는 AND·OR·XOR 게이트, 가산기, 감산기, 비교기, MUX/DEMUX, 인코더/디코더, 7-segment decoder 등의 조합논리회로를 설계하고 검증하였다.
 
 각 회로의 논리식과 변환 규칙으로 예상값을 계산하고, Vivado 시뮬레이션 파형의 안정 구간에서 입력·출력 관계를 확인하였다. 확보된 PASS 및 구현 기록은 시뮬레이션과 FPGA 구현 과정을 확인하는 보조 자료로 사용하였으며, 조교가 선정한 실험 06 MUX와 실험 10 7-segment decoder는 실제 보드 동작까지 비교하였다.
+
+실험 01~10의 실제 FPGA 작동 영상 총 10개는 표지에 표시한 GitHub의 Actual operation videos 경로에 정리하였다.
 
 ## 2. 실험별 설계 및 검증 결과
 
@@ -331,6 +339,12 @@ LAB1에서는 AND·OR·XOR 게이트, 가산기, 감산기, 비교기, MUX/DEMUX
 ## 부록 C. 제출 및 구현 추적 기록
 
 최종 code commit: 246d6b621ce5b7a30d8a71a98c3e03693e69c9de
+
+Board video commit: c4943c324671c74ba7c7ccb56131649367458d6c
+
+Actual operation video path: `evidence/board/LAB1/raw_videos/`
+
+Actual operation videos: [https://github.com/yunuos2525-cloud/ece2_2026/tree/c4943c324671c74ba7c7ccb56131649367458d6c/evidence/board/LAB1/raw_videos](https://github.com/yunuos2525-cloud/ece2_2026/tree/c4943c324671c74ba7c7ccb56131649367458d6c/evidence/board/LAB1/raw_videos)
 
 
 
