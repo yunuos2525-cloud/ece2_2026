@@ -12,7 +12,7 @@
 | 프로젝트 | ece2_2026 / LAB3 |
 | 기준 커밋 | 15bbfc0 |
 | GitHub 주소 | https://github.com/yunuos2525-cloud/ece2_2026.git |
-| 제출 태그 | 제출 시 확정 |
+| 제출 태그 | LAB3_PRE_FINAL |
 
 ## A. 목적 및 공통 검증 조건
 
