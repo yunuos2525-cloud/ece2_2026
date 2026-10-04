@@ -25,6 +25,21 @@
   - [07 Mealy FSM 실제 동작 영상](./evidence/board/LAB2/raw_videos/LAB2_07_mealy_demo.mp4)
   - [08 Segment Scan 실제 동작 영상](./evidence/board/LAB2/raw_videos/LAB2_08_segment_demo.mp4)
 
+## LAB3 — PWM 및 주변장치 제어
+
+- **Source:** [LAB3 source](./LAB3/)
+- **PRE Report:** [LAB3 실험 전 보고서](./reports/pre/LAB3_pre_report.pdf)
+- **POST Report:** [LAB3 실험 후 보고서](./reports/post/LAB3_post_report.pdf)
+- **Board Photo — 25 UART Echo:** [25 UART Echo 시연 사진](./evidence/board/LAB3/frames/)
+- **Board Videos**
+  - [19 LED PWM 실제 동작 영상](./evidence/board/LAB3/raw_videos/LAB3_19_led_pwm_program_video.mp4)
+  - [20 RGB PWM 실제 동작 영상](./evidence/board/LAB3/raw_videos/LAB3_20_rgb_pwm_video.mp4)
+  - [21 Piezo 실제 동작 영상](./evidence/board/LAB3/raw_videos/LAB3_21_piezo_program_video.mp4)
+  - [22 Stepper 실제 동작 영상](./evidence/board/LAB3/raw_videos/LAB3_22_stepper_video.mp4)
+  - [23 MM:SS Clock 실제 동작 영상](./evidence/board/LAB3/raw_videos/LAB3_23_mmss_clock_program_video.mp4)
+  - [24 Character LCD 실제 동작 영상](./evidence/board/LAB3/raw_videos/LAB3_24_character_lcd_video.mp4)
+  - [25 UART Echo 실제 동작 영상](./evidence/board/LAB3/raw_videos/LAB3_25_uart_echo_program_video.mp4)
+
 ## 참고
 
 - [FPGA 프로젝트 템플릿 사용 안내](./docs/FPGA_TEMPLATE_GUIDE.md)
