@@ -1,0 +1,9 @@
+RUN C:\iverilog\bin\iverilog.EXE -g2012 -Wall -I C:\Users\yunji\ece2\ece2_2026\LAB4\FPGA\02_bcd_to_binary\src -I C:\Users\yunji\ece2\ece2_2026\LAB4\FPGA\02_bcd_to_binary\sim -s tb_bcd_conv -o C:\Users\yunji\ece2\ece2_2026\LAB4\FPGA\02_bcd_to_binary\build\sim\run-1230cc0e2cc445dc9e2ef6f3005fbe15\sim.vvp C:\Users\yunji\ece2\ece2_2026\LAB4\FPGA\02_bcd_to_binary\src\bcd_to_binary.v C:\Users\yunji\ece2\ece2_2026\LAB4\FPGA\02_bcd_to_binary\src\bcd_conv.v C:\Users\yunji\ece2\ece2_2026\LAB4\FPGA\02_bcd_to_binary\sim\tb_bcd_conv.sv
+
+RUN C:\iverilog\bin\vvp.EXE -N C:\Users\yunji\ece2\ece2_2026\LAB4\FPGA\02_bcd_to_binary\build\sim\run-1230cc0e2cc445dc9e2ef6f3005fbe15\sim.vvp
+VCD info: dumpfile wave.vcd opened for output.
+PASS BCD: 100 valid and 156 invalid inputs
+C:\Users\yunji\ece2\ece2_2026\LAB4\FPGA\02_bcd_to_binary\sim\tb_bcd_conv.sv:19: $finish called at 256000 (1ps)
+
+시뮬레이션 실행 완료. 진리표·자기검사·파형으로 회로의 정답 여부를 확인하세요.
+WAVE C:\Users\yunji\ece2\ece2_2026\LAB4\FPGA\02_bcd_to_binary\build\sim\wave.vcd
