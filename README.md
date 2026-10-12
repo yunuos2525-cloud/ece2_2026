@@ -40,6 +40,22 @@
   - [24 Character LCD 실제 동작 영상](./evidence/board/LAB3/raw_videos/LAB3_24_character_lcd_video.mp4)
   - [25 UART Echo 실제 동작 영상](./evidence/board/LAB3/raw_videos/LAB3_25_uart_echo_program_video.mp4)
 
+## LAB4 — STM32 GPIO 및 FPGA 추가 실습
+
+- **Source:** [LAB4 source](./LAB4/)
+- **PRE Report:** [LAB4 실험 전 보고서](./reports/pre/LAB4_pre_report.pdf)
+- **POST Report:** [LAB4 실험 후 보고서](./reports/post/LAB4_post_report.pdf)
+- **STM32 Evidence Images**
+  - [Task 1 보드 동작 사진](./stm32_evidence/board/LAB4/03_task1_interval/task1_interval_frame.png)
+  - [Task 2 보드 동작 사진](./stm32_evidence/board/LAB4/04_task2_external_led/task2_external_led_frame.png)
+  - [Task 2 외부 LED 회로 사진](./stm32_evidence/board/LAB4/04_task2_external_led/circuit_photo.jpg)
+  - [Serial Monitor Hello World](./stm32_evidence/debug/LAB4/hello_world_serial.png)
+- **Board Videos**
+  - [STM32 Task 1 실제 동작 영상](./stm32_evidence/board/LAB4/03_task1_interval/task1_interval.mp4)
+  - [STM32 Task 2 실제 동작 영상](./stm32_evidence/board/LAB4/04_task2_external_led/task2_external_led.mp4)
+  - [4-bit Multiplier 실제 동작 영상](./evidence/board/LAB4/raw_videos/01_multiplier_4bit.mp4)
+  - [BCD to Binary 실제 동작 영상](./evidence/board/LAB4/raw_videos/02_bcd_to_binary.mp4)
+
 ## 참고
 
 - [FPGA 프로젝트 템플릿 사용 안내](./docs/FPGA_TEMPLATE_GUIDE.md)
