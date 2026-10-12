@@ -2,6 +2,8 @@
 
 USER_WAVEFORM_CHECK_GUIDE — 학생이 실제 VaporView에서 값을 읽고 기록한다. 자동 VCD 분석 결과는 사용자 관찰을 대신하지 않는다.
 
+증거 역할: compile/simulation PASS는 실행과 TB 검사 완료 근거이며, 이 가이드는 입력 조건과 expected에 대한 실제 파형 기능 검증을 기록한다. Program Device와 board photo/video는 각각 programming 수행과 실제 장치 관찰의 별도 근거이므로 파형 검증을 대신하지 않는다.
+
 확인할 run/VCD: [run ID와 실제 VCD 경로]
 source 대응 근거: [확인 불가능하면 UNKNOWN]
 확인할/추가할 신호: [전체 계층 경로, 입력/출력, 표시 진법, bit order]
@@ -61,3 +63,17 @@ user_observation_status = NOT_VERIFIED
 예상 결과: [ ]
 관찰 결과: [사용자 실제 기록만]
 해석: [신호별 예상/실제 비교와 차이 원인; 증거 없는 확정 금지]
+
+board와 비교할 때 정확한 주파수, pulse width, 내부 state timing, scan duty/refresh timing을 영상에서 실제 판독·측정하지 않았다면 board 관찰값으로 쓰지 않는다. RTL 계산 또는 이 파형에서 확인한 값은 “계산 기준” 또는 “simulation 파형 기준”으로 명시한다.
+
+## POST / Vivado 재관찰 연결
+
+POST에서 같은 case를 Vivado Behavioral Simulation으로 다시 확인할 때 아래를 추가 기록한다.
+
+| 플랫폼 | run/source | sample time/구간 | 실제 입력 | 실제 출력 | expected 일치 | screenshot |
+|---|---|---|---|---|---|---|
+| VS Code / Icarus | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Vivado / XSim | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+
+비교 문장은 “두 파형이 비슷하다”가 아니라 동일 입력/동일 expected를 기준으로 작성한다.
+Vivado에서 hierarchy/source 화면과 waveform이 모두 요구되면 둘 다 별도 evidence로 저장한다.
