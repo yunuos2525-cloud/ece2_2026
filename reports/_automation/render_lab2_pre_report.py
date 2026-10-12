@@ -309,9 +309,9 @@ def cover(canvas, doc):
         ("대상", "01 Counter ~ 08 Segment Scan, 08A Integrated"),
         ("검증 환경", "VS Code · Icarus Verilog · VaporView"),
         ("프로젝트", "ece2_2026 / LAB2"),
-        ("기준 커밋", "미지정 (LAB2 미커밋)"),
+        ("기준 커밋", "2f7c83ed7a9ac0e78f9ecae6f56da58015f5270b"),
         ("GitHub 주소", "github.com/yunuos2525-cloud/ece2_2026"),
-        ("제출 태그", "미지정"),
+        ("제출 태그", "LAB2_SUBMIT"),
     ]
     x, y, width, row_h = 84, 445, PAGE_W - 168, 32
     canvas.setStrokeColor(colors.HexColor("#bdbdbd"))
