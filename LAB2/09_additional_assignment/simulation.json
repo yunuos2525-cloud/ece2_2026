@@ -1,0 +1,13 @@
+{
+  "sources": [
+    "src/button_events.v",
+    "src/n_controller.v",
+    "src/programmable_divider.v",
+    "src/single_7seg.v",
+    "src/uart_sender.v",
+    "src/uart_tx.v",
+    "src/additional_top.v"
+  ],
+  "testbench": "sim/tb_additional_top.sv",
+  "simulation_top": "tb_additional_top"
+}
