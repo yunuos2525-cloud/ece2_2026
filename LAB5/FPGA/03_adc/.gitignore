@@ -1,0 +1,8 @@
+/build/
+/vivado/
+**/__pycache__/
+*.pyc
+**/.Xil/
+*.jou
+*.str
+*.code-workspace
