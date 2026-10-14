@@ -10,9 +10,9 @@
 | 대상 | STM32_1 및 FPGA 추가 실습 |
 | 검증 환경 | STM32Cube VS Code · CMake/Ninja · GNU Arm toolchain · Icarus Verilog · VaporView |
 | 프로젝트 | ece2_2026 / LAB5 |
-| 기준 커밋 | 미확정 (PRE 제출용 source commit 생성 후 입력) |
+| 기준 커밋 | 4e47668 |
 | GitHub 주소 | github.com/yunuos2525-cloud/ece2_2026.git |
-| 제출 태그 | `LAB5_PRE_FINAL` (예정, 미생성) |
+| 제출 태그 | LAB5_PRE_FINAL |
 
 ## 1. 실험 목적
 
