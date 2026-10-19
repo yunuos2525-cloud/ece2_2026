@@ -6,8 +6,35 @@ set_property IOSTANDARD LVCMOS33 [get_ports {clk_50mhz rst_p flicker}]
 create_clock -name clk_50mhz -period 20.000 [get_ports clk_50mhz]
 set_false_path -from [get_ports {rst_p flicker}]
 
-# NEEDS_PIN_VERIFICATION: the repository has no verified Combo II-DLD mapping
-# for these six four-bit traffic-light groups. Do not invent PACKAGE_PIN values.
+# COMBO II-DLD Spartan-7 traffic-light application module.
+# Confirmed against the laboratory manual pin-assignment tables (pp. 70-71).
+# Bit order follows the manual/public table: [0]=South, [1]=West,
+# [2]=East, [3]=North. Logical direction and LED polarity still require
+# functional board verification.
+set_property PACKAGE_PIN B13 [get_ports {led_red[0]}]
+set_property PACKAGE_PIN G14 [get_ports {led_red[1]}]
+set_property PACKAGE_PIN C17 [get_ports {led_red[2]}]
+set_property PACKAGE_PIN C12 [get_ports {led_red[3]}]
+set_property PACKAGE_PIN L18 [get_ports {led_yellow[0]}]
+set_property PACKAGE_PIN A14 [get_ports {led_yellow[1]}]
+set_property PACKAGE_PIN C18 [get_ports {led_yellow[2]}]
+set_property PACKAGE_PIN D13 [get_ports {led_yellow[3]}]
+set_property PACKAGE_PIN E16 [get_ports {led_green[0]}]
+set_property PACKAGE_PIN C16 [get_ports {led_green[1]}]
+set_property PACKAGE_PIN A20 [get_ports {led_green[2]}]
+set_property PACKAGE_PIN E11 [get_ports {led_green[3]}]
+set_property PACKAGE_PIN F15 [get_ports {led_left[0]}]
+set_property PACKAGE_PIN D15 [get_ports {led_left[1]}]
+set_property PACKAGE_PIN C19 [get_ports {led_left[2]}]
+set_property PACKAGE_PIN F10 [get_ports {led_left[3]}]
+set_property PACKAGE_PIN A19 [get_ports {led_walk_red[0]}]
+set_property PACKAGE_PIN G13 [get_ports {led_walk_red[1]}]
+set_property PACKAGE_PIN E18 [get_ports {led_walk_red[2]}]
+set_property PACKAGE_PIN C11 [get_ports {led_walk_red[3]}]
+set_property PACKAGE_PIN E19 [get_ports {led_walk_green[0]}]
+set_property PACKAGE_PIN F12 [get_ports {led_walk_green[1]}]
+set_property PACKAGE_PIN A16 [get_ports {led_walk_green[2]}]
+set_property PACKAGE_PIN G11 [get_ports {led_walk_green[3]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {led_red[*]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {led_yellow[*]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {led_green[*]}]
