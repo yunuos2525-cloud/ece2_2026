@@ -56,6 +56,18 @@
   - [4-bit Multiplier 실제 동작 영상](./evidence/board/LAB4/raw_videos/01_multiplier_4bit.mp4)
   - [BCD to Binary 실제 동작 영상](./evidence/board/LAB4/raw_videos/02_bcd_to_binary.mp4)
 
+## LAB5 — STM32 인터럽트와 PWM 및 FPGA 응용
+
+- **Source:** [LAB5 source](./LAB5/)
+- **PRE Report:** [LAB5 실험 전 보고서](./reports/pre/LAB5_pre_report.pdf)
+- **POST Report:** [LAB5 실험 후 보고서](./reports/post/LAB5_post_report.pdf)
+- **FPGA VS Code Evidence:** [LAB5 VS Code evidence](./evidence/vscode/LAB5/)
+- **FPGA Vivado Evidence:** [LAB5 Vivado evidence](./evidence/vivado/LAB5/)
+- **FPGA Board Videos:** [LAB5 FPGA 실제 동작 영상](./evidence/board/LAB5/raw_videos/)
+- **STM32 Build Evidence:** [LAB5 STM32 build evidence](./stm32_evidence/build/LAB5/)
+- **STM32 Board Evidence:** [LAB5 STM32 board evidence](./stm32_evidence/board/LAB5/)
+- **STM32 Debug Evidence:** [LAB5 STM32 debug evidence](./stm32_evidence/debug/LAB5/)
+
 ## 참고
 
 - [FPGA 프로젝트 템플릿 사용 안내](./docs/FPGA_TEMPLATE_GUIDE.md)
