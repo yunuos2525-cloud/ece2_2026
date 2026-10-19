@@ -61,12 +61,16 @@
 - **Source:** [LAB5 source](./LAB5/)
 - **PRE Report:** [LAB5 실험 전 보고서](./reports/pre/LAB5_pre_report.pdf)
 - **POST Report:** [LAB5 실험 후 보고서](./reports/post/LAB5_post_report.pdf)
-- **FPGA VS Code Evidence:** [LAB5 VS Code evidence](./evidence/vscode/LAB5/)
-- **FPGA Vivado Evidence:** [LAB5 Vivado evidence](./evidence/vivado/LAB5/)
-- **FPGA Board Videos:** [LAB5 FPGA 실제 동작 영상](./evidence/board/LAB5/raw_videos/)
-- **STM32 Build Evidence:** [LAB5 STM32 build evidence](./stm32_evidence/build/LAB5/)
-- **STM32 Board Evidence:** [LAB5 STM32 board evidence](./stm32_evidence/board/LAB5/)
-- **STM32 Debug Evidence:** [LAB5 STM32 debug evidence](./stm32_evidence/debug/LAB5/)
+- **STM32 Evidence Images**
+  - [CCR 250](./stm32_evidence/debug/LAB5/05_task4_pwm_control/ccr_250.png)
+  - [CCR 500](./stm32_evidence/debug/LAB5/05_task4_pwm_control/ccr_500.png)
+  - [CCR 750](./stm32_evidence/debug/LAB5/05_task4_pwm_control/ccr_750.png)
+- **Board Videos**
+  - [STM32 Task 3](./stm32_evidence/board/LAB5/04_task3_interval_isr/board_video.mp4)
+  - [STM32 Task 4](./stm32_evidence/board/LAB5/05_task4_pwm_control/pwm_change.mp4)
+  - [FPGA Piano](./evidence/board/LAB5/raw_videos/01_piano.mp4)
+  - [FPGA Traffic](./evidence/board/LAB5/raw_videos/02_traffic.mp4)
+  - [FPGA ADC](./evidence/board/LAB5/raw_videos/03_adc.mp4)
 
 ## 참고
 
