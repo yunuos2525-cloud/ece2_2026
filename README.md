@@ -72,6 +72,15 @@
   - [FPGA Traffic](./evidence/board/LAB5/raw_videos/02_traffic.mp4)
   - [FPGA ADC](./evidence/board/LAB5/raw_videos/03_adc.mp4)
 
+## LAB6 — STM32 UART 통신 및 FPGA 응용 실습
+
+- **Source:** [LAB6 source](./LAB6/)
+- **PRE Report Markdown:** [LAB6 실험 전 보고서 Markdown](./reports/pre/LAB6_pre_report.md)
+- **PRE Report PDF:** [LAB6 실험 전 보고서 PDF](./reports/pre/LAB6_pre_report.pdf)
+- **PRE Evidence**
+  - [VS Code simulation evidence](./evidence/vscode/LAB6/)
+  - [Vivado XDC validation evidence](./evidence/vivado/LAB6/)
+
 ## 참고
 
 - [FPGA 프로젝트 템플릿 사용 안내](./docs/FPGA_TEMPLATE_GUIDE.md)
