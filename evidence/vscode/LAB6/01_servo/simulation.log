@@ -1,0 +1,4 @@
+VCD info: dumpfile wave.vcd opened for output.
+LAB6_SERVO_PASS frame=2000 widths=100/150/200 limits=1000..2000
+C:\Users\yunji\ece2\ece2_2026\LAB6\FPGA\01_servo\sim\tb_servo.sv:86: $finish called at 100036000 (1ps)
+VVP_EXIT_CODE=0

@@ -1,0 +1,4 @@
+VCD info: dumpfile wave.vcd opened for output.
+LAB6_DAC_PASS writes=260 wrap=255_to_0 setup_hold channel
+C:\Users\yunji\ece2\ece2_2026\LAB6\FPGA\03_dac\sim\tb_dac.sv:67: $finish called at 10446000 (1ps)
+VVP_EXIT_CODE=0

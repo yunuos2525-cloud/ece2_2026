@@ -1,0 +1,13 @@
+{
+  "status": "FAILED",
+  "run": "run-cf5ab119092b4e44b6a7b7afb1571bd3",
+  "functional_correctness": "NOT_ASSESSED",
+  "inputs_sha256": {
+    "simulation.json": "221eacc7be75416d52cabdc5a2b850c114a474e4d8c171a53ed6747cb5b7da01",
+    "src/ramp8.v": "f0c01c72cc44396eaa5a2f8b18c03eb961dffee512c3e82ef02ee3c0157f89f4",
+    "src/dac_parallel8.v": "98cd51ee080bd2164920948ff2376f59066934eafd15dbf33f76876d99ab3c73",
+    "src/dac.v": "97c5aa9a9fddf79db32963d9b09a00c66ccfb21ced2becf415c1ea9336d0505c",
+    "sim/tb_dac.sv": "c37290d0afa38fa060df562d8a7454b9d6c3361a326c4e957a259eef6cf45937"
+  },
+  "error": "exit code 3221225477: C:\\Users\\yunji\\ece2\\ece2_2026\\LAB6\\FPGA\\03_dac\\build\\sim\\run-cf5ab119092b4e44b6a7b7afb1571bd3\\compile.log"
+}

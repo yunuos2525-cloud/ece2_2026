@@ -1,0 +1,12 @@
+{
+  "status": "FAILED",
+  "run": "run-cc0e04285a6342c39ad2d11a0fae2f36",
+  "functional_correctness": "NOT_ASSESSED",
+  "inputs_sha256": {
+    "simulation.json": "71457cfc75cfd3f0e12b7db2b61abae56c017d0fff4c023ed9005cbc25ac23b1",
+    "src/sram_bus_control.v": "c0c9748ef9040272cc9e76acbb6da23e3d844410335f4a5208856058137fd09b",
+    "src/sram.v": "9d035ff010a718ebef167f8542a4c0f6beb3e7475f90a43c2dc21302dad288f5",
+    "sim/tb_sram.sv": "08046700f17136e3e625f10e146b32aca81eaf2b72b3c2643891155a6ea93f79"
+  },
+  "error": "exit code 3221225477: C:\\Users\\yunji\\ece2\\ece2_2026\\LAB6\\FPGA\\02_sram\\build\\sim\\run-cc0e04285a6342c39ad2d11a0fae2f36\\compile.log"
+}

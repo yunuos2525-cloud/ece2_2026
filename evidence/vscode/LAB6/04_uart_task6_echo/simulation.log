@@ -1,0 +1,4 @@
+VCD info: dumpfile wave.vcd opened for output.
+LAB6_UART_TASK6_PASS checks=3 ascii=31/41/61
+C:\Users\yunji\ece2\ece2_2026\LAB6\FPGA\04_uart_task6_echo\sim\tb_uart_task6_echo.sv:59: $finish called at 9970000 (1ps)
+VVP_EXIT_CODE=0

@@ -1,0 +1,693 @@
+INFO: [Common 17-3922] A valid Vivado Design Suite BASIC license has been detected. Your current license is active and will expire on 12-sep-2027.
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Tue Oct 20 00:47:21 2026
+# Process ID         : 39112
+# Current directory  : C:/Users/yunji/ece2/ece2_2026
+# Command line       : vivado.exe -mode batch -source LAB6/tools/validate_xdc.tcl -log evidence/vivado/LAB6/xdc_validation/vivado.log -journal evidence/vivado/LAB6/xdc_validation/vivado.jou
+# Log file           : C:/Users/yunji/ece2/ece2_2026/evidence/vivado/LAB6/xdc_validation/vivado.log
+# Journal file       : C:/Users/yunji/ece2/ece2_2026\evidence/vivado/LAB6/xdc_validation/vivado.jou
+# Running On         : dbswl5303
+# Platform           : Windows 11
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) Ultra 7 258V
+# CPU Frequency      : 3302 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 8
+# Host memory        : 33864 MB
+# Swap memory        : 34359 MB
+# Total Virtual      : 68223 MB
+# Available Virtual  : 29328 MB
+#-----------------------------------------------------------
+source LAB6/tools/validate_xdc.tcl
+# set repo [file normalize [file join [file dirname [info script]] .. ..]]
+# set evidence [file join $repo evidence vivado LAB6 xdc_validation]
+# file mkdir $evidence
+# proc validate_design {repo evidence name top source_paths xdc_rel expected_ports} {
+#     puts "VALIDATE_BEGIN $name"
+#     create_project -in_memory -part xc7s75fgga484-1
+# 
+#     foreach rel $source_paths {
+#         read_verilog [file join $repo $rel]
+#     }
+#     synth_design -top $top -part xc7s75fgga484-1
+#     read_xdc [file join $repo $xdc_rel]
+# 
+#     set ports [get_ports]
+#     if {[llength $ports] != $expected_ports} {
+#         error "$name expected $expected_ports ports, found [llength $ports]"
+#     }
+# 
+#     set missing_pin {}
+#     set missing_iostandard {}
+#     set invalid_pin {}
+#     set seen_pins [dict create]
+#     set duplicate_pins {}
+# 
+#     foreach port $ports {
+#         set pin [get_property PACKAGE_PIN $port]
+#         set ios [get_property IOSTANDARD $port]
+#         if {$pin eq ""} {
+#             lappend missing_pin $port
+#         } else {
+#             if {[llength [get_package_pins -quiet $pin]] != 1} {
+#                 lappend invalid_pin "$port=$pin"
+#             }
+#             if {[dict exists $seen_pins $pin]} {
+#                 lappend duplicate_pins "$pin:[dict get $seen_pins $pin],$port"
+#             } else {
+#                 dict set seen_pins $pin $port
+#             }
+#         }
+#         if {$ios ne "LVCMOS33"} {
+#             lappend missing_iostandard "$port=$ios"
+#         }
+#     }
+# 
+#     report_io -force -file [file join $evidence "${name}_report_io.rpt"]
+#     report_drc -checks [get_drc_checks {UCIO-1 NSTD-1}] \
+#         -force -file [file join $evidence "${name}_drc.rpt"]
+# 
+#     set drc_violations [get_drc_violations -quiet {UCIO-1 NSTD-1}]
+#     set summary [open [file join $evidence "${name}_summary.txt"] w]
+#     puts $summary "part=xc7s75fgga484-1"
+#     puts $summary "top=$top"
+#     puts $summary "port_count=[llength $ports]"
+#     puts $summary "package_pin_count=[dict size $seen_pins]"
+#     puts $summary "missing_package_pin=$missing_pin"
+#     puts $summary "invalid_package_pin=$invalid_pin"
+#     puts $summary "duplicate_package_pin=$duplicate_pins"
+#     puts $summary "non_lvcmos33=$missing_iostandard"
+#     puts $summary "ucio_nstd_violations=$drc_violations"
+#     close $summary
+# 
+#     if {[llength $missing_pin] || [llength $invalid_pin] ||
+#         [llength $duplicate_pins] || [llength $missing_iostandard] ||
+#         [llength $drc_violations]} {
+#         error "$name XDC validation failed"
+#     }
+# 
+#     puts "VALIDATE_PASS $name ports=[llength $ports] pins=[dict size $seen_pins]"
+#     close_project
+# }
+# validate_design $repo $evidence servo servo_board_top {
+#     LAB6/FPGA/01_servo/src/servo_position.v
+#     LAB6/FPGA/01_servo/src/servo_pwm.v
+#     LAB6/FPGA/01_servo/src/servo_ctrl.v
+#     LAB6/FPGA/01_servo/board/servo_board_top.v
+# } LAB6/FPGA/01_servo/constraints/servo_ctrl.xdc 5
+VALIDATE_BEGIN servo
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 580.000 ; gain = 268.121
+Command: synth_design -top servo_board_top -part xc7s75fgga484-1
+Starting synth_design
+Attempting to get a license for feature 'Vivado_Synthesis' and/or device 'xc7s75'
+INFO: [Common 17-349] Got license for feature 'Vivado_Synthesis' and/or device 'xc7s75'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 23264
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1159.418 ; gain = 572.453
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'servo_board_top' [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/01_servo/board/servo_board_top.v:2]
+INFO: [Synth 8-6157] synthesizing module 'servo_ctrl' [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/01_servo/src/servo_ctrl.v:2]
+	Parameter CLK_HZ bound to: 50000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'servo_position' [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/01_servo/src/servo_position.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'servo_position' (0#1) [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/01_servo/src/servo_position.v:2]
+INFO: [Synth 8-6157] synthesizing module 'servo_pwm' [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/01_servo/src/servo_pwm.v:2]
+	Parameter CLK_HZ bound to: 50000000 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'servo_pwm' (0#1) [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/01_servo/src/servo_pwm.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'servo_ctrl' (0#1) [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/01_servo/src/servo_ctrl.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'servo_board_top' (0#1) [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/01_servo/board/servo_board_top.v:2]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1279.281 ; gain = 692.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1279.281 ; gain = 692.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7s75fgga484-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7s75fgga484-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1279.281 ; gain = 692.316
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1279.281 ; gain = 692.316
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   12 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
++---Multipliers : 
+	              16x32  Multipliers := 1     
++---Muxes : 
+	   2 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 140 (col length:80)
+BRAMs: 180 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1498.664 ; gain = 911.699
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1498.664 ; gain = 911.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1498.664 ; gain = 911.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1745.660 ; gain = 1158.695
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1745.660 ; gain = 1158.695
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1745.660 ; gain = 1158.695
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1745.660 ; gain = 1158.695
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1745.660 ; gain = 1158.695
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1745.660 ; gain = 1158.695
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    99|
+|3     |LUT1   |    19|
+|4     |LUT2   |   163|
+|5     |LUT3   |   153|
+|6     |LUT4   |   165|
+|7     |LUT5   |    79|
+|8     |LUT6   |    65|
+|9     |FDRE   |    58|
+|10    |FDSE   |    15|
+|11    |IBUF   |     4|
+|12    |OBUF   |     1|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------------+---------------+------+
+|      |Instance       |Module         |Cells |
++------+---------------+---------------+------+
+|1     |top            |               |   822|
+|2     |  u_servo_ctrl |servo_ctrl     |   816|
+|3     |    u_position |servo_position |   295|
+|4     |    u_pwm      |servo_pwm      |   521|
++------+---------------+---------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1745.660 ; gain = 1158.695
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1745.660 ; gain = 1158.695
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1745.660 ; gain = 1158.695
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1759.707 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 99 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1871.559 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: fb769cc7
+INFO: [Common 17-83] Releasing license: Vivado_Synthesis
+20 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1872.551 ; gain = 1292.551
+Parsing XDC File [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/01_servo/constraints/servo_ctrl.xdc]
+Finished Parsing XDC File [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/01_servo/constraints/servo_ctrl.xdc]
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.086 . Memory (MB): peak = 1872.551 ; gain = 0.000
+Command: report_drc -checks {NSTD-1 UCIO-1} -force -file C:/Users/yunji/ece2/ece2_2026/evidence/vivado/LAB6/xdc_validation/servo_drc.rpt
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/Users/yunji/ece2/ece2_2026/evidence/vivado/LAB6/xdc_validation/servo_drc.rpt.
+report_drc completed successfully
+VALIDATE_PASS servo ports=5 pins=5
+# validate_design $repo $evidence sram sram {
+#     LAB6/FPGA/02_sram/src/sram_bus_control.v
+#     LAB6/FPGA/02_sram/src/sram.v
+# } LAB6/FPGA/02_sram/constraints/sram.xdc 55
+VALIDATE_BEGIN sram
+Command: synth_design -top sram -part xc7s75fgga484-1
+Starting synth_design
+Attempting to get a license for feature 'Vivado_Synthesis' and/or device 'xc7s75'
+INFO: [Common 17-349] Got license for feature 'Vivado_Synthesis' and/or device 'xc7s75'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1872.551 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'sram' [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/02_sram/src/sram.v:2]
+INFO: [Synth 8-6157] synthesizing module 'sram_bus_control' [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/02_sram/src/sram_bus_control.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'sram_bus_control' (0#1) [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/02_sram/src/sram_bus_control.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'sram' (0#1) [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/02_sram/src/sram.v:2]
+WARNING: [Synth 8-3917] design sram has port ram_address[17] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[16] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[15] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[14] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[13] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[12] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[11] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[10] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[9] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[8] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[7] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[6] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[5] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[4] driven by constant 0
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1872.551 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1872.551 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7s75fgga484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1872.551 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1872.551 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input    4 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 140 (col length:80)
+BRAMs: 180 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3917] design sram has port ram_address[17] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[16] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[15] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[14] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[13] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[12] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[11] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[10] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[9] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[8] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[7] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[6] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[5] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port ram_address[4] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port led_out[7] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port led_out[6] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port led_out[5] driven by constant 0
+WARNING: [Synth 8-3917] design sram has port led_out[4] driven by constant 0
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1872.551 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1872.551 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1872.551 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1872.551 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1872.551 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1872.551 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1872.551 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1872.551 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1872.551 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |LUT2  |     4|
+|2     |LUT3  |     4|
+|3     |IBUF  |    10|
+|4     |IOBUF |     4|
+|5     |OBUF  |    29|
+|6     |OBUFT |    12|
++------+------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1872.551 ; gain = 0.000
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 32 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1872.551 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1872.551 ; gain = 0.000
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1872.551 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1876.148 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 4 instances
+
+Synth Design complete | Checksum: 5d6190e8
+INFO: [Common 17-83] Releasing license: Vivado_Synthesis
+13 Infos, 32 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 1900.992 ; gain = 28.441
+Parsing XDC File [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/02_sram/constraints/sram.xdc]
+Finished Parsing XDC File [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/02_sram/constraints/sram.xdc]
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.142 . Memory (MB): peak = 1900.992 ; gain = 0.000
+Command: report_drc -checks {NSTD-1 UCIO-1} -force -file C:/Users/yunji/ece2/ece2_2026/evidence/vivado/LAB6/xdc_validation/sram_drc.rpt
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/Users/yunji/ece2/ece2_2026/evidence/vivado/LAB6/xdc_validation/sram_drc.rpt.
+report_drc completed successfully
+VALIDATE_PASS sram ports=55 pins=55
+# validate_design $repo $evidence dac dac {
+#     LAB6/FPGA/03_dac/src/ramp8.v
+#     LAB6/FPGA/03_dac/src/dac_parallel8.v
+#     LAB6/FPGA/03_dac/src/dac.v
+# } LAB6/FPGA/03_dac/constraints/dac.xdc 23
+VALIDATE_BEGIN dac
+Command: synth_design -top dac -part xc7s75fgga484-1
+Starting synth_design
+Attempting to get a license for feature 'Vivado_Synthesis' and/or device 'xc7s75'
+INFO: [Common 17-349] Got license for feature 'Vivado_Synthesis' and/or device 'xc7s75'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1900.992 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'dac' [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/03_dac/src/dac.v:2]
+INFO: [Synth 8-6157] synthesizing module 'ramp8' [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/03_dac/src/ramp8.v:2]
+	Parameter UPDATE_CYCLES bound to: 500000 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ramp8' (0#1) [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/03_dac/src/ramp8.v:2]
+INFO: [Synth 8-6157] synthesizing module 'dac_parallel8' [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/03_dac/src/dac_parallel8.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'dac_parallel8' (0#1) [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/03_dac/src/dac_parallel8.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'dac' (0#1) [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/03_dac/src/dac.v:2]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1900.992 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1900.992 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7s75fgga484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1900.992 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1900.992 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 140 (col length:80)
+BRAMs: 180 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3917] design dac has port dac_csn driven by constant 0
+WARNING: [Synth 8-3917] design dac has port dac_ldacn driven by constant 0
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1900.992 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1900.992 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1900.992 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1900.992 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1900.992 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1900.992 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1900.992 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1900.992 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1900.992 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     8|
+|3     |LUT1   |     3|
+|4     |LUT2   |     2|
+|5     |LUT3   |     2|
+|6     |LUT4   |     6|
+|7     |LUT5   |     7|
+|8     |LUT6   |     3|
+|9     |FDRE   |    50|
+|10    |FDSE   |     1|
+|11    |IBUF   |     3|
+|12    |OBUF   |    20|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1900.992 ; gain = 0.000
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1900.992 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1900.992 ; gain = 0.000
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1900.992 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1900.992 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 3276b191
+INFO: [Common 17-83] Releasing license: Vivado_Synthesis
+15 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 1909.973 ; gain = 8.980
+Parsing XDC File [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/03_dac/constraints/dac.xdc]
+Finished Parsing XDC File [C:/Users/yunji/ece2/ece2_2026/LAB6/FPGA/03_dac/constraints/dac.xdc]
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.088 . Memory (MB): peak = 1909.973 ; gain = 0.000
+Command: report_drc -checks {NSTD-1 UCIO-1} -force -file C:/Users/yunji/ece2/ece2_2026/evidence/vivado/LAB6/xdc_validation/dac_drc.rpt
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/Users/yunji/ece2/ece2_2026/evidence/vivado/LAB6/xdc_validation/dac_drc.rpt.
+report_drc completed successfully
+VALIDATE_PASS dac ports=23 pins=23
+# puts "ALL_XDC_VALIDATIONS_PASS"
+ALL_XDC_VALIDATIONS_PASS
+# exit 0
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 20 00:48:49 2026...

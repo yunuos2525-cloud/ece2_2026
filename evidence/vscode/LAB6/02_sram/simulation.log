@@ -1,0 +1,4 @@
+VCD info: dumpfile wave.vcd opened for output.
+LAB6_SRAM_PASS addresses=16 write/read bus_release conflict_guard
+C:\Users\yunji\ece2\ece2_2026\LAB6\FPGA\02_sram\sim\tb_sram.sv:86: $finish called at 164000 (1ps)
+VVP_EXIT_CODE=0

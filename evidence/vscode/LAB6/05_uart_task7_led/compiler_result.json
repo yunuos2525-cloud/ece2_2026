@@ -1,0 +1,12 @@
+{
+  "status": "FAILED",
+  "run": "run-4a5888d963ef4c7e934c875767eb8c4e",
+  "functional_correctness": "NOT_ASSESSED",
+  "inputs_sha256": {
+    "simulation.json": "e692de7bd3ea3920c3e76dc10358f97a64b2d75a02d26462564a5cf0fbe33809",
+    "src/uart.v": "51a5175efbd45348e494f41fcf187e957f2db1d825c5776785792ea683a560e6",
+    "src/lab6_uart_led.v": "5136ad7272c471f60b9e5224ebe53bdc45ba1f0db8556c231de7fcccb5421573",
+    "sim/tb_uart_task7_led.sv": "0041accd22cdb19989ae3d919ec5656489c70f5b2a4bbcbc6b66907b497b127a"
+  },
+  "error": "exit code 3221225477: C:\\Users\\yunji\\ece2\\ece2_2026\\LAB6\\FPGA\\05_uart_task7_led\\build\\sim\\run-4a5888d963ef4c7e934c875767eb8c4e\\compile.log"
+}

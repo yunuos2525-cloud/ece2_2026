@@ -1,0 +1,36 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Tue Oct 20 00:48:01 2026
+| Host         : dbswl5303 running 64-bit major release  (build 9200)
+| Command      : report_drc -checks {NSTD-1 UCIO-1} -force -file C:/Users/yunji/ece2/ece2_2026/evidence/vivado/LAB6/xdc_validation/servo_drc.rpt
+| Design       : servo_board_top
+| Device       : xc7s75fgga484-1
+| Speed File   : -1
+| Design State : ignored
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: servo_board_top
+          Floorplan: design_1
+      Design limits: <entire design considered>
+
+            Checks: NSTD-1 UCIO-1
+             Max checks: <unlimited>
+             Checks found: 0
++------+----------+-------------+--------+
+| Rule | Severity | Description | Checks |
++------+----------+-------------+--------+
++------+----------+-------------+--------+
+
+2. REPORT DETAILS
+-----------------
+

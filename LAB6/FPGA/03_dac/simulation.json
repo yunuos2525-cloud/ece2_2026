@@ -1,0 +1,10 @@
+{
+  "sources": [
+    "src/ramp8.v",
+    "src/dac_parallel8.v",
+    "src/dac.v"
+  ],
+  "testbench": "sim/tb_dac.sv",
+  "simulation_top": "tb_dac"
+}
+

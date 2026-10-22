@@ -1,0 +1,10 @@
+ninja: Entering directory `C:\Users\yunji\ece2\stm32_lab\build\Debug'
+[1/2] Building C object CMakeFiles/ece2_474.dir/Core/Src/ece2_474_routine.c.obj
+[2/2] Linking C executable ece2_474.elf
+Memory region         Used Size  Region Size  %age Used
+
+             RAM:        2640 B       128 KB      2.01%
+
+           FLASH:       27788 B       512 KB      5.30%
+
+BUILD_EXIT_CODE=0

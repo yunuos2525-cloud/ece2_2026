@@ -1,0 +1,9 @@
+part=xc7s75fgga484-1
+top=servo_board_top
+port_count=5
+package_pin_count=5
+missing_package_pin=
+invalid_package_pin=
+duplicate_package_pin=
+non_lvcmos33=
+ucio_nstd_violations=

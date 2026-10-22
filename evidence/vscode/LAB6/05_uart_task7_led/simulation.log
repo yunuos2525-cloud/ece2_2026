@@ -1,0 +1,4 @@
+VCD info: dumpfile wave.vcd opened for output.
+LAB6_UART_TASK7_PASS checks=8 commands=0/1/2/other repeat reset
+C:\Users\yunji\ece2\ece2_2026\LAB6\FPGA\05_uart_task7_led\sim\tb_uart_task7_led.sv:80: $finish called at 26491000 (1ps)
+VVP_EXIT_CODE=0

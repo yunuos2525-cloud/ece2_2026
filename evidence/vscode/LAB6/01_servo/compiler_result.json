@@ -1,0 +1,13 @@
+{
+  "status": "FAILED",
+  "run": "run-86f04b044cb8402b91f6e8c8d4a1076c",
+  "functional_correctness": "NOT_ASSESSED",
+  "inputs_sha256": {
+    "simulation.json": "d1ee4d6468f0e112ccbf8b1e3888008dbb4a2abddc88dbfff7bed222a728285a",
+    "src/servo_position.v": "c482cf56fe16e9655767be53abebead493f0fd993591de4742454841d1c33cad",
+    "src/servo_pwm.v": "dd6dad7f18e30263d966e7a95f8381bd1e6cdfa3fc70e7229e37f7be15f37f84",
+    "src/servo_ctrl.v": "6de0695ef93785b4a87a03005c8c87ee909137a2ae71717e9cc34a456100b85e",
+    "sim/tb_servo.sv": "c7e63db5373a9ee9e33832d5091b4c67591752c7fa46aff0918448049f514ab1"
+  },
+  "error": "exit code 3221225477: C:\\Users\\yunji\\ece2\\ece2_2026\\LAB6\\FPGA\\01_servo\\build\\sim\\run-86f04b044cb8402b91f6e8c8d4a1076c\\compile.log"
+}
