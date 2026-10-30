@@ -8,7 +8,7 @@ module servo_board_top #(parameter integer CLK_HZ = 50_000_000)(
 );
     servo_ctrl #(.CLK_HZ(CLK_HZ)) u_servo_ctrl(
         .clk_50mhz(clk_50mhz),
-        .rst_p(~resetn),
+        .rst_p(resetn),
         .left_pulse(left_pulse),
         .right_pulse(right_pulse),
         .servo(servo)
