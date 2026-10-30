@@ -75,11 +75,18 @@
 ## LAB6 — STM32 UART 통신 및 FPGA 응용 실습
 
 - **Source:** [LAB6 source](./LAB6/)
-- **PRE Report Markdown:** [LAB6 실험 전 보고서 Markdown](./reports/pre/LAB6_pre_report.md)
-- **PRE Report PDF:** [LAB6 실험 전 보고서 PDF](./reports/pre/LAB6_pre_report.pdf)
-- **PRE Evidence**
-  - [VS Code simulation evidence](./evidence/vscode/LAB6/)
-  - [Vivado XDC validation evidence](./evidence/vivado/LAB6/)
+- **PRE Report:** [LAB6 실험 전 보고서](./reports/pre/LAB6_pre_report.pdf)
+- **POST Report:** [LAB6 실험 후 보고서](./reports/post/LAB6_post_report.pdf)
+- **STM32 Evidence Images**
+  - [Task 5 ASCII 출력](./stm32_evidence/debug/LAB6/01_task5_pc_uart/serial_ascii.png)
+  - [Task 6 UART 송신 및 Echo](./stm32_evidence/debug/LAB6/02_task6_mcu_fpga_uart/serial_echo.png)
+  - [Task 7 명령 송신 및 Echo](./stm32_evidence/debug/LAB6/03_task7_uart_led/serial_commands.png)
+  - [Task 7 FPGA LED 제어](./stm32_evidence/board/LAB6/03_task7_uart_led/uart_led_control_frame.png)
+- **Board Videos**
+  - [FPGA Servo](./evidence/board/LAB6/raw_videos/01_servo.mp4)
+  - [FPGA SRAM](./evidence/board/LAB6/raw_videos/02_SRAM.mp4)
+  - [FPGA DAC](./evidence/board/LAB6/raw_videos/03_DAC.mp4)
+  - [STM32–FPGA UART Task 7](./stm32_evidence/board/LAB6/03_task7_uart_led/uart_led_control.mp4)
 
 ## 참고
 
