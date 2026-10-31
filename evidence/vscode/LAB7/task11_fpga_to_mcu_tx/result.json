@@ -1,0 +1,12 @@
+{
+  "status": "SIMULATED",
+  "run": "run-abfae592eb284b568df33e106f20a727",
+  "functional_correctness": "SELF_CHECKING_TESTBENCH",
+  "inputs_sha256": {
+    "04_task11_fpga_to_mcu_tx/simulation.json": "7faad1f6e9f9bbaca63bca9893f6a9ffbadc9e264a4d0837fad168bdee76b7c8",
+    "common/src/spi_master_tx.v": "6d51bae04638452934c28c3805ccc48ac93924803c6d918bba09a199949283e2",
+    "04_task11_fpga_to_mcu_tx/src/task11_fpga_mcu_tx_top.v": "c16d95d7e05e26370716e506a5284bd751900430d94e1c5ec2382e56e5800426",
+    "04_task11_fpga_to_mcu_tx/sim/tb_task11_spi_master_tx.sv": "16d05df46c129018052eef14651aa129466eda7c8f013dc90ffb34d5abcf28d8"
+  },
+  "wave_sha256": "439c266f8d5750c5e71718934fff3753775cfa9e64acc8ee0dade6d8dbb7323b"
+}

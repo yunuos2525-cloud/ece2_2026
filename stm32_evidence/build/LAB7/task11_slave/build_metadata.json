@@ -1,0 +1,24 @@
+{
+  "status": "BUILD_SUCCEEDED",
+  "role": "task11_slave",
+  "source": "LAB7/STM32/common/ece2_474_spi_slave_uart.c",
+  "source_sha256": "ec93e0a0c7f3ad01264fd1278a0393474893c9ec17d685acdf62ccf4c58c879f",
+  "workspace": "C:\\Users\\yunji\\ece2\\stm32_lab",
+  "configuration": "Debug",
+  "build_tool": "1.13.2",
+  "compiler": "arm-none-eabi-gcc.exe (GNU Tools for STM32 14.3.rel1.20251027-0700) 14.3.1 20250623",
+  "artifacts": {
+    "ece2_474.elf": {
+      "bytes": 1658292,
+      "sha256": "676f76e4ab9f9d6c323e81a6d8b5a90f1a67b5dc7b42e880e057426f29d77447"
+    },
+    "ece2_474.hex": {
+      "bytes": 86532,
+      "sha256": "485afcd3b08f291844c84714558f2d66ba801574a08a7ecbb2ca4a7c70471f80"
+    },
+    "ece2_474.bin": {
+      "bytes": 30736,
+      "sha256": "76b110deeb20deb349eefa73f4a893e5d0ee9b81b600473376ef9f3b0beb5986"
+    }
+  }
+}

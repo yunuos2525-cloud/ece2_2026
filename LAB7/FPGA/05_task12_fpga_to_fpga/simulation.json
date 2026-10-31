@@ -1,0 +1,11 @@
+{
+  "sources": [
+    "../common/src/spi_master_tx.v",
+    "../common/src/spi_slave_rx.v",
+    "../common/src/uart.v",
+    "../03_task10_mcu_to_fpga_rx/src/task10_mcu_fpga_rx_top.v",
+    "../04_task11_fpga_to_mcu_tx/src/task11_fpga_mcu_tx_top.v"
+  ],
+  "testbench": "sim/tb_task12_fpga_spi_link.sv",
+  "simulation_top": "tb_task12_fpga_spi_link"
+}

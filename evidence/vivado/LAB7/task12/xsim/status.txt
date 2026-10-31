@@ -1,0 +1,4 @@
+status=XSIM_COMPLETED
+part=xc7s75fgga484-1
+simulation_top=tb_task12_fpga_spi_link
+note=Testbench PASS text is in the Vivado batch log; waveform visual review remains NOT_VERIFIED.

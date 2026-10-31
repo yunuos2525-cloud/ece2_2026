@@ -1,0 +1,9 @@
+{
+  "sources": [
+    "../common/src/spi_slave_rx.v",
+    "../common/src/uart.v",
+    "src/task10_mcu_fpga_rx_top.v"
+  ],
+  "testbench": "sim/tb_task10_spi_slave_rx.sv",
+  "simulation_top": "tb_task10_spi_slave_rx"
+}

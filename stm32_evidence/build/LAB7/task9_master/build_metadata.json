@@ -1,0 +1,24 @@
+{
+  "status": "BUILD_SUCCEEDED",
+  "role": "task9_master",
+  "source": "LAB7/STM32/common/ece2_474_spi_master_sequence.c",
+  "source_sha256": "1fc71cf7bdb432d2a79a32e218cb4e060853a11cb18f88b04a1d0c95c4bd1722",
+  "workspace": "C:\\Users\\yunji\\ece2\\stm32_lab",
+  "configuration": "Debug",
+  "build_tool": "1.13.2",
+  "compiler": "arm-none-eabi-gcc.exe (GNU Tools for STM32 14.3.rel1.20251027-0700) 14.3.1 20250623",
+  "artifacts": {
+    "ece2_474.elf": {
+      "bytes": 1658020,
+      "sha256": "a5ea819e2f98569cdf8f2a74ca495bb339f87e8d7ae1f9a4b70123ad01b3ffbe"
+    },
+    "ece2_474.hex": {
+      "bytes": 81360,
+      "sha256": "deac745bd1ea0164acbded4eb1542a9c129b795e186be00d3efbc829126c1d19"
+    },
+    "ece2_474.bin": {
+      "bytes": 28904,
+      "sha256": "7945c7cb7a099d77c843a7ef3f8d23f07b772ab64e8c360c5b61267d29ac865e"
+    }
+  }
+}

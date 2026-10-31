@@ -1,0 +1,180 @@
+INFO: [Common 17-3922] A valid Vivado Design Suite BASIC license has been detected. Your current license is active and will expire on 12-sep-2027.
+
+****** Vivado v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Sat Oct 31 14:10:05 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source {LAB7\tools\run_vivado_xsim.tcl}
+# if {$argc != 1} {
+#     error "usage: vivado -mode batch -source run_vivado_xsim.tcl -tclargs task10|task11|task12"
+# }
+# set task [lindex $argv 0]
+# set repo [file normalize [file join [file dirname [info script]] ../..]]
+# set fpga [file join $repo LAB7 FPGA]
+# set evidence [file join $repo evidence vivado LAB7 $task xsim]
+# set project_dir [file join $fpga build vivado $task xsim_project]
+# file mkdir $evidence
+# file mkdir [file dirname $project_dir]
+# switch -- $task {
+#     task10 {
+#         set top tb_task10_spi_slave_rx
+#         set files [list \
+#             [file join $fpga common src spi_slave_rx.v] \
+#             [file join $fpga common src uart.v] \
+#             [file join $fpga 03_task10_mcu_to_fpga_rx src task10_mcu_fpga_rx_top.v]]
+#         set tb [file join $fpga 03_task10_mcu_to_fpga_rx sim tb_task10_spi_slave_rx.sv]
+#     }
+#     task11 {
+#         set top tb_task11_spi_master_tx
+#         set files [list \
+#             [file join $fpga common src spi_master_tx.v] \
+#             [file join $fpga 04_task11_fpga_to_mcu_tx src task11_fpga_mcu_tx_top.v]]
+#         set tb [file join $fpga 04_task11_fpga_to_mcu_tx sim tb_task11_spi_master_tx.sv]
+#     }
+#     task12 {
+#         set top tb_task12_fpga_spi_link
+#         set files [list \
+#             [file join $fpga common src spi_master_tx.v] \
+#             [file join $fpga common src spi_slave_rx.v] \
+#             [file join $fpga common src uart.v] \
+#             [file join $fpga 03_task10_mcu_to_fpga_rx src task10_mcu_fpga_rx_top.v] \
+#             [file join $fpga 04_task11_fpga_to_mcu_tx src task11_fpga_mcu_tx_top.v]]
+#         set tb [file join $fpga 05_task12_fpga_to_fpga sim tb_task12_fpga_spi_link.sv]
+#     }
+#     default { error "unknown LAB7 simulation: $task" }
+# }
+# create_project -force lab7_${task}_xsim $project_dir -part xc7s75fgga484-1
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 578.969 ; gain = 266.441
+# add_files -norecurse $files
+# add_files -fileset sim_1 -norecurse $tb
+# set_property top $top [get_filesets sim_1]
+# set_property -name {xsim.simulate.runtime} -value {all} -objects [get_filesets sim_1]
+# launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Vivado 12-28535] Process started - Sat Oct 31 14:10:21 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_task12_fpga_spi_link'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/yunji/ece2/ece2_2026/LAB7/FPGA/build/vivado/task12/xsim_project/lab7_task12_xsim.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/AMDDesignTools/2026.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_task12_fpga_spi_link' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/yunji/ece2/ece2_2026/LAB7/FPGA/build/vivado/task12/xsim_project/lab7_task12_xsim.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_task12_fpga_spi_link_vlog.prj"
+
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/yunji/ece2/ece2_2026/LAB7/FPGA/common/src/spi_master_tx.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module spi_master_tx
+
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/yunji/ece2/ece2_2026/LAB7/FPGA/common/src/spi_slave_rx.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module spi_slave_rx
+
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/yunji/ece2/ece2_2026/LAB7/FPGA/03_task10_mcu_to_fpga_rx/src/task10_mcu_fpga_rx_top.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module task10_mcu_fpga_rx_top
+
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/yunji/ece2/ece2_2026/LAB7/FPGA/04_task11_fpga_to_mcu_tx/src/task11_fpga_mcu_tx_top.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module task11_fpga_mcu_tx_top
+
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/yunji/ece2/ece2_2026/LAB7/FPGA/common/src/uart.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module uart_tx
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/yunji/ece2/ece2_2026/LAB7/FPGA/05_task12_fpga_to_fpga/sim/tb_task12_fpga_spi_link.sv" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module tb_task12_fpga_spi_link
+
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/yunji/ece2/ece2_2026/LAB7/FPGA/build/vivado/task12/xsim_project/lab7_task12_xsim.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module glbl
+
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/yunji/ece2/ece2_2026/LAB7/FPGA/build/vivado/task12/xsim_project/lab7_task12_xsim.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_task12_fpga_spi_link_behav xil_defaultlib.tb_task12_fpga_spi_link xil_defaultlib.glbl -log elaborate.log"
+
+Vivado Simulator v2026.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: C:/AMDDesignTools/2026.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_task12_fpga_spi_link_behav xil_defaultlib.tb_task12_fpga_spi_link xil_defaultlib.glbl -log elaborate.log 
+
+INFO: [XSIM 43-3493] Using 2 slave threads.
+
+Starting static elaboration
+
+Pass Through NonSizing Optimizer
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling module xil_defaultlib.spi_master_tx(HALF_PERIOD_CYCLES...
+
+Compiling module xil_defaultlib.task11_fpga_mcu_tx_top(CLK_HZ=10...
+
+Compiling module xil_defaultlib.spi_slave_rx
+
+Compiling module xil_defaultlib.uart_tx(DIV=10)
+
+Compiling module xil_defaultlib.task10_mcu_fpga_rx_top(CLK_HZ=10...
+
+Compiling module xil_defaultlib.tb_task12_fpga_spi_link
+
+Compiling module xil_defaultlib.glbl
+
+Built simulation snapshot tb_task12_fpga_spi_link_behav
+
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/yunji/ece2/ece2_2026/LAB7/FPGA/build/vivado/task12/xsim_project/lab7_task12_xsim.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_task12_fpga_spi_link_behav -key {Behavioral:sim_1:Functional:tb_task12_fpga_spi_link} -tclbatch {tb_task12_fpga_spi_link.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_task12_fpga_spi_link.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run all
+PASS: Task 12 reused Task 10/11 RTL and passed SPI plus receiver UART checks
+$finish called at time : 6595 ns : File "C:/Users/yunji/ece2/ece2_2026/LAB7/FPGA/05_task12_fpga_to_fpga/sim/tb_task12_fpga_spi_link.sv" Line 118
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_task12_fpga_spi_link_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for all
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 601.508 ; gain = 22.539
+# set generated_vcd [file join $project_dir lab7_${task}_xsim.sim sim_1 behav xsim wave.vcd]
+# if {![file exists $generated_vcd]} {
+#     error "testbench did not produce the expected XSim VCD: $generated_vcd"
+# }
+# file copy -force $generated_vcd [file join $evidence wave.vcd]
+# set summary [open [file join $evidence status.txt] w]
+# puts $summary "status=XSIM_COMPLETED"
+# puts $summary "part=xc7s75fgga484-1"
+# puts $summary "simulation_top=$top"
+# puts $summary "note=Testbench PASS text is in the Vivado batch log; waveform visual review remains NOT_VERIFIED."
+# close $summary
+# close_sim
+INFO: [Simtcl 6-16] Simulation closed
+# close_project
+INFO: [Common 17-206] Exiting Vivado at Sat Oct 31 14:10:30 2026...

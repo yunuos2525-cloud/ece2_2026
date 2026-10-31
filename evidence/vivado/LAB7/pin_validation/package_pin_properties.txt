@@ -1,0 +1,79 @@
+part=xc7s75fgga484-1
+
+===== PACKAGE_PIN F8 =====
+Property                Type    Read-only  Value
+BANK                    string  true       36
+BUFIO_2_REGION          string  true       TR
+CLASS                   string  true       package_pin
+DIFF_PAIR_PIN           string  true       G8
+IS_BONDED               bool    true       1
+IS_CLK_CAPABLE          bool    true       0
+IS_DIFFERENTIAL         bool    true       1
+IS_GENERAL_PURPOSE      bool    true       1
+IS_GLOBAL_CLK           bool    true       0
+IS_LOW_CAP              bool    true       0
+IS_MASTER               bool    true       0
+IS_USED                 bool    true       0
+IS_VREF                 bool    true       0
+IS_VRN                  bool    true       0
+IS_VRP                  bool    true       0
+MAX_DELAY               int     true       54572
+MIN_DELAY               int     true       54029
+NAME                    string  true       F8
+PIN_FUNC                enum    true       IO_L9N_T1_DQS_36
+PIN_FUNC_COUNT          int     true       1
+PIN_RESTRICTIONS        string  true       
+PKGPIN_BYTEGROUP_INDEX  int     true       0
+PKGPIN_NIBBLE_INDEX     int     true       0
+
+===== PACKAGE_PIN E8 =====
+Property                Type    Read-only  Value
+BANK                    string  true       36
+BUFIO_2_REGION          string  true       TR
+CLASS                   string  true       package_pin
+DIFF_PAIR_PIN           string  true       
+IS_BONDED               bool    true       1
+IS_CLK_CAPABLE          bool    true       0
+IS_DIFFERENTIAL         bool    true       0
+IS_GENERAL_PURPOSE      bool    true       1
+IS_GLOBAL_CLK           bool    true       0
+IS_LOW_CAP              bool    true       0
+IS_MASTER               bool    true       0
+IS_USED                 bool    true       0
+IS_VREF                 bool    true       0
+IS_VRN                  bool    true       0
+IS_VRP                  bool    true       0
+MAX_DELAY               int     true       36400
+MIN_DELAY               int     true       36038
+NAME                    string  true       E8
+PIN_FUNC                enum    true       IO_0_36
+PIN_FUNC_COUNT          int     true       1
+PIN_RESTRICTIONS        string  true       
+PKGPIN_BYTEGROUP_INDEX  int     true       0
+PKGPIN_NIBBLE_INDEX     int     true       0
+
+===== PACKAGE_PIN A7 =====
+Property                Type    Read-only  Value
+BANK                    string  true       36
+BUFIO_2_REGION          string  true       TR
+CLASS                   string  true       package_pin
+DIFF_PAIR_PIN           string  true       A6
+IS_BONDED               bool    true       1
+IS_CLK_CAPABLE          bool    true       0
+IS_DIFFERENTIAL         bool    true       1
+IS_GENERAL_PURPOSE      bool    true       1
+IS_GLOBAL_CLK           bool    true       0
+IS_LOW_CAP              bool    true       0
+IS_MASTER               bool    true       1
+IS_USED                 bool    true       0
+IS_VREF                 bool    true       0
+IS_VRN                  bool    true       0
+IS_VRP                  bool    true       0
+MAX_DELAY               int     true       87358
+MIN_DELAY               int     true       86489
+NAME                    string  true       A7
+PIN_FUNC                enum    true       IO_L4P_T0_36
+PIN_FUNC_COUNT          int     true       1
+PIN_RESTRICTIONS        string  true       
+PKGPIN_BYTEGROUP_INDEX  int     true       0
+PKGPIN_NIBBLE_INDEX     int     true       0

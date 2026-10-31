@@ -1,0 +1,15 @@
+{
+  "status": "SIMULATED",
+  "run": "run-ed84020a56f44e0495f74b1af5366f74",
+  "functional_correctness": "SELF_CHECKING_TESTBENCH",
+  "inputs_sha256": {
+    "05_task12_fpga_to_fpga/simulation.json": "eedb6f6076bf26951e2009218beca111be8b8913d1638c72e9f86d4000e07d86",
+    "common/src/spi_master_tx.v": "6d51bae04638452934c28c3805ccc48ac93924803c6d918bba09a199949283e2",
+    "common/src/spi_slave_rx.v": "7da172d7c8c3d83162f39f051cd3e7cae1609f38b64bc4211d677f6ae1126ea5",
+    "common/src/uart.v": "fe8b389de759156dca42515b651cdaab1adb9e5e33746d7f4b9c332dde1cd4ab",
+    "03_task10_mcu_to_fpga_rx/src/task10_mcu_fpga_rx_top.v": "f7ee7489f7ac05e73c2946e3e89ae227759b89168fefc77455e9c088a89aa3ca",
+    "04_task11_fpga_to_mcu_tx/src/task11_fpga_mcu_tx_top.v": "c16d95d7e05e26370716e506a5284bd751900430d94e1c5ec2382e56e5800426",
+    "05_task12_fpga_to_fpga/sim/tb_task12_fpga_spi_link.sv": "6cdf8a2b7fd61bbf124bb99373de58c06d00de18b22bb011d70e6957b1bda094"
+  },
+  "wave_sha256": "92ea4f510e5659c45fa3ff5eb7c4c69e725dd9b042b4b07431fa3705e33844e5"
+}

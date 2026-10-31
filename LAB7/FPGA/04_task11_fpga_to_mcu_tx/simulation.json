@@ -1,0 +1,8 @@
+{
+  "sources": [
+    "../common/src/spi_master_tx.v",
+    "src/task11_fpga_mcu_tx_top.v"
+  ],
+  "testbench": "sim/tb_task11_spi_master_tx.sv",
+  "simulation_top": "tb_task11_spi_master_tx"
+}

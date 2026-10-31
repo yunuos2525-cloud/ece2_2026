@@ -1,0 +1,3 @@
+VCD info: dumpfile wave.vcd opened for output.
+PASS: Task 12 reused Task 10/11 RTL and passed SPI plus receiver UART checks
+C:\Users\yunji\ece2\ece2_2026\LAB7\FPGA\05_task12_fpga_to_fpga\sim\tb_task12_fpga_spi_link.sv:118: $finish called at 6595000 (1ps)

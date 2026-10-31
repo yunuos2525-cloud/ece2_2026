@@ -1,0 +1,3 @@
+VCD info: dumpfile wave.vcd opened for output.
+PASS: Task 10 Mode-0 slave, frame abort, byte order, LED and UART checks passed
+C:\Users\yunji\ece2\ece2_2026\LAB7\FPGA\03_task10_mcu_to_fpga_rx\sim\tb_task10_spi_slave_rx.sv:161: $finish called at 15755000 (1ps)

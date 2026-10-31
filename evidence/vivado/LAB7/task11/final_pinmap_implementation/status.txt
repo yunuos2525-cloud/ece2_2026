@@ -1,0 +1,7 @@
+synthesis=PASS
+implementation_route=PASS
+part=xc7s75fgga484-1
+top=task11_fpga_mcu_tx_top
+unassigned_ports=
+ucio_1_count=0
+bitstream=GENERATED
