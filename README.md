@@ -88,6 +88,12 @@
   - [FPGA DAC](./evidence/board/LAB6/raw_videos/03_DAC.mp4)
   - [STM32–FPGA UART Task 7](./stm32_evidence/board/LAB6/03_task7_uart_led/uart_led_control.mp4)
 
+## LAB7 — STM32 SPI 통신 및 FPGA 송수신 설계
+
+- **Source:** [LAB7 source](./LAB7/)
+- **PRE Report:** [LAB7 실험 전 보고서](./reports/pre/LAB7_pre_report.pdf)
+- **PRE Markdown:** [LAB7 실험 전 보고서 원고](./reports/pre/LAB7_pre_report.md)
+
 ## 참고
 
 - [FPGA 프로젝트 템플릿 사용 안내](./docs/FPGA_TEMPLATE_GUIDE.md)
