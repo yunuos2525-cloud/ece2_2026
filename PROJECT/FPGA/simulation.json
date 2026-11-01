@@ -1,0 +1,25 @@
+{
+  "tests": {
+    "sample_tick": {
+      "sources": [
+        "src/timing/sample_tick.v"
+      ],
+      "testbench": "sim/tb_sample_tick.sv",
+      "simulation_top": "tb_sample_tick"
+    },
+    "audio_bypass": {
+      "sources": [
+        "src/timing/sample_tick.v",
+        "src/io/adc_command.v",
+        "src/io/serial_frame16.v",
+        "src/io/adc_reader_16k.v",
+        "src/io/dac_parallel8.v",
+        "src/io/dac_writer.v",
+        "src/control/spi_slave_rx.v",
+        "src/project_top.v"
+      ],
+      "testbench": "sim/tb_audio_bypass.sv",
+      "simulation_top": "tb_audio_bypass"
+    }
+  }
+}

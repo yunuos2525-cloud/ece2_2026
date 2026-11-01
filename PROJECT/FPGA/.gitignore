@@ -1,0 +1,15 @@
+build/
+.Xil/
+*.jou
+*.log
+*.pb
+*.str
+*.wdb
+*.vcd
+*.bit
+*.dcp
+*.runs/
+*.cache/
+*.gen/
+*.hw/
+*.ip_user_files/
