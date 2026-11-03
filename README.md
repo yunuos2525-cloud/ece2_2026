@@ -88,11 +88,20 @@
   - [FPGA DAC](./evidence/board/LAB6/raw_videos/03_DAC.mp4)
   - [STM32–FPGA UART Task 7](./stm32_evidence/board/LAB6/03_task7_uart_led/uart_led_control.mp4)
 
-## LAB7 — STM32 SPI 통신 및 FPGA 송수신 설계
+## LAB7 — STM32 SPI 통신 및 FPGA 송수신
 
 - **Source:** [LAB7 source](./LAB7/)
 - **PRE Report:** [LAB7 실험 전 보고서](./reports/pre/LAB7_pre_report.pdf)
-- **PRE Markdown:** [LAB7 실험 전 보고서 원고](./reports/pre/LAB7_pre_report.md)
+- **POST Report:** [LAB7 실험 후 보고서](./reports/post/LAB7_post_report.pdf)
+- **Evidence Images**
+  - [Task 8 — STM32 SPI 송신 및 파형](./evidence/board/LAB7/task8/)
+  - [Task 9 — STM32 간 양방향 통신](./evidence/board/LAB7/task9/)
+  - [Task 10 — STM32 → FPGA](./evidence/board/LAB7/task10/)
+  - [Task 11 — FPGA → STM32](./evidence/board/LAB7/task11/)
+  - [Task 12 — FPGA 간 양방향 통신](./evidence/board/LAB7/task12/)
+- **Board Videos**
+  - [Task 12 — 우리 조 수신](./evidence/board/LAB7/task12/our_group_rx_dip_to_spi_rx.mp4)
+  - [Task 12 — 우리 조 송신](./evidence/board/LAB7/task12/our_group_tx_spi_tx_to_other_group.mp4)
 
 ## 참고
 
